@@ -1,0 +1,785 @@
+/* Responsive Styles for SaveSmart */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+    
+    .hero__title {
+        font-size: 2.5rem;
+    }
+    
+    .analytics__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recent__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    .hero__visual {
+        grid-template-columns: 1fr 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .footer__content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .overview__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonials__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .scenario-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .scenario-emoji {
+        margin: 0 auto;
+    }
+    
+    .player-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .setup-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .mode-selection {
+        grid-template-columns: 1fr;
+    }
+    
+    .analytics__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recent__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .goals-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .badges-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .filters-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-metric {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        flex-wrap: wrap;
+    }
+    
+    .nav__menu {
+        order: 3;
+        width: 100%;
+        margin-top: var(--spacing-md);
+        display: none;
+    }
+    
+    .nav__menu.show {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .nav__toggle {
+        display: block;
+    }
+    
+    .nav__actions {
+        margin-left: auto;
+    }
+    
+    .hero__title {
+        font-size: 2rem;
+    }
+    
+    .hero__actions {
+        justify-content: center;
+    }
+    
+    .hero__visual {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero__stats {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+    
+    .features__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer__content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer__social {
+        justify-content: center;
+    }
+    
+    .modal__content {
+        width: 95%;
+        margin: var(--spacing-md);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form__actions {
+        flex-direction: column;
+    }
+    
+    .choice-btn {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .choice-icon {
+        margin: 0 auto;
+    }
+    
+    .prediction-result {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .scenario-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .progress-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .categories-tabs {
+        justify-content: center;
+    }
+    
+    .transaction-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .transaction-actions {
+        justify-content: center;
+    }
+    
+    .welcome-section {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .view-options {
+        justify-content: center;
+    }
+    
+    .goal-card__header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .goal-card__actions {
+        justify-content: center;
+    }
+    
+    .goal-card__footer {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .badge-card {
+        text-align: center;
+    }
+    
+    .phone-mockup {
+        width: 250px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero__title {
+        font-size: 1.75rem;
+    }
+    
+    .hero__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn--large {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .stats__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .balance {
+        font-size: 2rem;
+    }
+    
+    .card__header {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: flex-start;
+        text-align: center;
+    }
+    
+    .scenario-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .scenario-stats {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .scenario-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .player-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .progress-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .categories-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .category-tab {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .badges-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filters-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-actions {
+        flex-direction: column;
+    }
+    
+    .transaction-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .transaction-amount {
+        align-self: center;
+    }
+    
+    .goal-actions {
+        flex-direction: column;
+    }
+    
+    .modal__content--large {
+        width: 95%;
+        margin: var(--spacing-sm);
+    }
+    
+    .phone-mockup {
+        width: 200px;
+        height: 400px;
+    }
+    
+    .game-scene {
+        padding: 10px;
+    }
+    
+    .scenario-card-mini {
+        padding: 15px;
+    }
+    
+    .choices {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav__logo h1 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .slogan {
+        font-size: var(--font-size-xs);
+    }
+    
+    .hero__card {
+        padding: var(--spacing-lg);
+    }
+    
+    .feature__card {
+        padding: var(--spacing-lg);
+    }
+    
+    .step {
+        padding: var(--spacing-lg);
+    }
+    
+    .testimonial__card {
+        padding: var(--spacing-lg);
+    }
+    
+    .scenario-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .choice-btn {
+        padding: var(--spacing-lg);
+    }
+    
+    .progress-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .overview-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .summary-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .filters-section {
+        padding: var(--spacing-lg);
+    }
+    
+    .transactions-section {
+        padding: var(--spacing-lg);
+    }
+    
+    .welcome-section {
+        padding: var(--spacing-lg);
+    }
+    
+    .analytics-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .recent-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .setup-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .setup-option {
+        padding: var(--spacing-lg);
+    }
+    
+    .predictor-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .transfer-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .mode-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .goal-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .badge-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .modal__content {
+        width: 98%;
+        margin: var(--spacing-sm);
+    }
+    
+    .modal__header {
+        padding: var(--spacing-lg);
+    }
+    
+    .modal__body {
+        padding: var(--spacing-lg);
+    }
+    
+    .modal__form {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* Print styles */
+@media print {
+    .nav,
+    .footer,
+    .btn,
+    .modal,
+    .hero__actions,
+    .nav__actions,
+    .scenario-choices,
+    .quick-scenarios,
+    .game-progress,
+    .security-notice,
+    .setup-options,
+    .skill-transfer,
+    .mode-selection {
+        display: none !important;
+    }
+    
+    .main {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #000;
+        break-inside: avoid;
+    }
+    
+    .hero {
+        min-height: auto;
+        padding: 20px 0;
+    }
+    
+    .page-header {
+        background: white !important;
+        color: black !important;
+        border: 2px solid #000;
+    }
+    
+    .page-title {
+        color: black !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-600: #0000FF;
+        --primary-700: #000080;
+        --gray-600: #000000;
+        --gray-800: #000000;
+    }
+    
+    .card {
+        border: 2px solid #000;
+    }
+    
+    .btn--primary {
+        background-color: #0000FF;
+        color: white;
+    }
+    
+    .btn--secondary {
+        border-color: #0000FF;
+        color: #0000FF;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .choice-btn:hover,
+    .feature__card:hover,
+    .setup-option:hover,
+    .mode-card:hover,
+    .goal-card:hover,
+    .badge-card:hover,
+    .transaction-item:hover,
+    .achievement-item:hover,
+    .mini-scenario:hover {
+        transform: none;
+    }
+}
+
+/* Large screen support */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero__title {
+        font-size: 3.5rem;
+    }
+    
+    .features__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .steps {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --gray-50: #1a1a1a;
+        --gray-100: #2d2d2d;
+        --gray-200: #404040;
+        --gray-300: #525252;
+        --gray-400: #666666;
+        --gray-500: #7a7a7a;
+        --gray-600: #8d8d8d;
+        --gray-700: #a1a1a1;
+        --gray-800: #b5b5b5;
+        --gray-900: #c8c8c8;
+    }
+    
+    body {
+        background-color: #121212;
+        color: var(--gray-900);
+    }
+    
+    .header {
+        background: #1e1e1e;
+    }
+    
+    .card,
+    .feature__card,
+    .testimonial__card,
+    .scenario-card,
+    .stat-card,
+    .progress-card,
+    .overview-card,
+    .summary-card,
+    .analytics-card,
+    .recent-card,
+    .setup-card,
+    .setup-option,
+    .predictor-card,
+    .mode-card,
+    .goal-card,
+    .badge-card {
+        background: #2d2d2d;
+        color: var(--gray-900);
+    }
+    
+    input, select, textarea {
+        background: #2d2d2d;
+        border-color: #404040;
+        color: var(--gray-900);
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .choice-btn:hover,
+    .feature__card:hover,
+    .setup-option:hover,
+    .mode-card:hover,
+    .goal-card:hover,
+    .badge-card:hover,
+    .transaction-item:hover,
+    .achievement-item:hover,
+    .mini-scenario:hover {
+        transform: none;
+    }
+    
+    .btn--primary:hover,
+    .btn--secondary:hover {
+        transform: none;
+    }
+    
+    .nav__link:hover {
+        background-color: transparent;
+    }
+    
+    .nav__link.active {
+        background-color: var(--primary-50);
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .hero__title {
+        font-size: 1.5rem;
+    }
+    
+    .hero__description {
+        font-size: var(--font-size-base);
+    }
+    
+    .nav__logo {
+        gap: var(--spacing-sm);
+    }
+    
+    .nav__logo h1 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .slogan {
+        display: none;
+    }
+    
+    .virtual-currency {
+        padding: 6px 12px;
+        font-size: var(--font-size-sm);
+    }
+    
+    .phone-mockup {
+        width: 180px;
+        height: 360px;
+        border-radius: 30px;
+        padding: 15px;
+    }
+    
+    .phone-screen {
+        border-radius: 20px;
+    }
+    
+    .game-scene {
+        padding: 8px;
+    }
+    
+    .character {
+        font-size: 3rem;
+    }
+    
+    .money-stack {
+        font-size: 1.5rem;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .hero__title {
+        font-size: 2rem;
+    }
+    
+    .phone-mockup {
+        width: 200px;
+        height: 350px;
+    }
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .modal__content {
+        max-height: 80vh;
+    }
+    
+    .choice-btn {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Fix for Firefox scrollbar */
+@-moz-document url-prefix() {
+    .modal__content {
+        scrollbar-width: thin;
+        scrollbar-color: var(--gray-400) var(--gray-100);
+    }
+}

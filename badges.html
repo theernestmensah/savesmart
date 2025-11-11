@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Achievement Badges - SaveSmart</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <i class="fas fa-piggy-bank"></i>
+          <div>
+            <h1>SaveSmart</h1>
+            <p class="slogan">
+              Financial Freedom, One Smart Decision at a Time
+            </p>
+          </div>
+        </div>
+
+        <ul class="nav__menu" id="nav-menu">
+          <li class="nav__item">
+            <a href="dashboard.html" class="nav__link">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="transactions.html" class="nav__link">
+              <i class="fas fa-exchange-alt"></i>
+              <span>Transactions</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="goals.html" class="nav__link">
+              <i class="fas fa-bullseye"></i>
+              <span>Goals</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="badges.html" class="nav__link active">
+              <i class="fas fa-trophy"></i>
+              <span>Badges</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav__actions">
+          <button class="btn btn--primary" id="quick-add-btn">
+            <i class="fas fa-plus"></i>
+            Quick Add
+          </button>
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main container">
+      <section class="page-header">
+        <h1 class="page-title">Achievement Badges</h1>
+        <p>
+          Earn badges by reaching financial milestones and building good habits
+        </p>
+      </section>
+
+      <!-- Badges Summary -->
+      <section class="badges-summary">
+        <div class="summary-grid">
+          <div class="summary-card">
+            <div class="summary-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-label">Total Badges</div>
+              <div class="summary-amount" id="total-badges">0</div>
+            </div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-label">Earned Badges</div>
+              <div class="summary-amount" id="earned-badges">0</div>
+            </div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-label">Locked Badges</div>
+              <div class="summary-amount" id="locked-badges">0</div>
+            </div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-icon">
+              <i class="fas fa-fire"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-label">Current Streak</div>
+              <div class="summary-amount" id="current-streak">0 days</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Badges Categories -->
+      <section class="badges-categories">
+        <div class="categories-tabs">
+          <button class="category-tab active" data-category="all">
+            All Badges
+          </button>
+          <button class="category-tab" data-category="saving">Saving</button>
+          <button class="category-tab" data-category="goals">Goals</button>
+          <button class="category-tab" data-category="consistency">
+            Consistency
+          </button>
+          <button class="category-tab" data-category="milestones">
+            Milestones
+          </button>
+        </div>
+      </section>
+
+      <!-- Badges Grid -->
+      <section class="badges-grid-section">
+        <div class="badges-grid" id="badges-grid">
+          <!-- Badges will be populated by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Recent Achievements -->
+      <section class="recent-achievements">
+        <div class="card">
+          <div class="card__header">
+            <h3>Recent Achievements</h3>
+            <i class="fas fa-history"></i>
+          </div>
+          <div class="achievements-list" id="achievements-list">
+            <!-- Recent achievements will be populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__section">
+            <div class="footer__logo">
+              <i class="fas fa-piggy-bank"></i>
+              <h3>SaveSmart</h3>
+            </div>
+            <p>
+              Professional financial management tools for modern individuals and
+              families.
+            </p>
+          </div>
+          <div class="footer__section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="transactions.html">Transactions</a></li>
+              <li><a href="goals.html">Goals</a></li>
+              <li><a href="badges.html">Badges</a></li>
+            </ul>
+          </div>
+          <div class="footer__section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2024 SaveSmart. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Badge Details Modal -->
+    <div class="modal" id="badge-details-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3 id="badge-details-title">Badge Details</h3>
+          <button class="modal__close" id="badge-details-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="badge-details-content" id="badge-details-content">
+          <!-- Badge details will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/badges.js"></script>
+  </body>
+</html>

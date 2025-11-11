@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SaveSmart</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <i class="fas fa-piggy-bank"></i>
+          <div>
+            <h1>SaveSmart</h1>
+            <p class="slogan">Your Financial Command Center 🚀</p>
+          </div>
+        </div>
+
+        <ul class="nav__menu" id="nav-menu">
+          <li class="nav__item">
+            <a href="dashboard.html" class="nav__link active">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="game.html" class="nav__link">
+              <i class="fas fa-gamepad"></i>
+              <span>Money Game</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="real-money.html" class="nav__link">
+              <i class="fas fa-chart-line"></i>
+              <span>Real Money</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="transactions.html" class="nav__link">
+              <i class="fas fa-exchange-alt"></i>
+              <span>Transactions</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="goals.html" class="nav__link">
+              <i class="fas fa-bullseye"></i>
+              <span>Goals</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="badges.html" class="nav__link">
+              <i class="fas fa-trophy"></i>
+              <span>Badges</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav__actions">
+          <div class="user-profile">
+            <div class="avatar">😎</div>
+            <span class="user-level">Level 5</span>
+          </div>
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main container">
+      <!-- Welcome Section -->
+      <section class="welcome-section">
+        <div class="welcome__content">
+          <h1>Welcome back! 👋</h1>
+          <p>Here's your financial overview for today</p>
+          <div class="user-stats">
+            <div class="user-stat">
+              <span class="stat-value" id="current-streak">0</span>
+              <span class="stat-label">Day Streak</span>
+            </div>
+            <div class="user-stat">
+              <span class="stat-value" id="scenarios-completed">0</span>
+              <span class="stat-label">Scenarios</span>
+            </div>
+            <div class="user-stat">
+              <span class="stat-value" id="goals-achieved">0</span>
+              <span class="stat-label">Goals</span>
+            </div>
+          </div>
+        </div>
+        <div class="welcome__date">
+          <span id="current-date">Monday, October 16, 2023</span>
+          <div class="weather-finance">
+            <span class="finance-mood" id="finance-mood"
+              >😊 Your finances look great!</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Financial Overview Cards -->
+      <section class="overview-cards">
+        <div class="overview__grid">
+          <!-- Total Balance Card -->
+          <div class="overview-card overview-card--primary interactive-hover">
+            <div class="card__header">
+              <h3>Total Balance</h3>
+              <i class="fas fa-wallet"></i>
+            </div>
+            <div class="balance-amount" id="total-balance">$12,458.75</div>
+            <div class="card__trend positive">
+              <i class="fas fa-arrow-up"></i>
+              8.2% from last month
+            </div>
+            <div class="card__actions">
+              <button
+                class="btn btn--secondary btn--small btn-press"
+                id="add-funds"
+              >
+                <i class="fas fa-plus"></i>
+                Add Funds
+              </button>
+              <button
+                class="btn btn--secondary btn--small btn-press"
+                id="transfer-money"
+              >
+                <i class="fas fa-exchange-alt"></i>
+                Transfer
+              </button>
+            </div>
+          </div>
+
+          <!-- Monthly Budget Card -->
+          <div class="overview-card interactive-hover">
+            <div class="card__header">
+              <h3>Monthly Budget</h3>
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <div class="budget-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 65%"></div>
+              </div>
+              <div class="budget-details">
+                <span>$1,950</span>
+                <span>$3,000</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <span>65% of budget used • $1,050 remaining</span>
+            </div>
+            <div class="budget-categories">
+              <div class="category-progress">
+                <span>Food</span>
+                <div class="progress-bar small">
+                  <div class="progress-fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="category-progress">
+                <span>Entertainment</span>
+                <div class="progress-bar small">
+                  <div class="progress-fill" style="width: 45%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Savings Goals Card -->
+          <div class="overview-card interactive-hover">
+            <div class="card__header">
+              <h3>Savings Goals</h3>
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="goals-progress">
+              <div class="goal-item">
+                <div class="goal-info">
+                  <span class="goal-name">Emergency Fund</span>
+                  <span class="goal-amount">$3,800 / $5,000</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 76%"></div>
+                </div>
+              </div>
+              <div class="goal-item">
+                <div class="goal-info">
+                  <span class="goal-name">Vacation</span>
+                  <span class="goal-amount">$1,200 / $2,500</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 48%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card__footer">
+              <a
+                href="goals.html"
+                class="btn btn--secondary btn--small btn--full btn-press"
+              >
+                View All Goals
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Charts and Analytics Section -->
+      <section class="analytics-section">
+        <div class="analytics__grid">
+          <!-- Spending Chart -->
+          <div class="analytics-card analytics-card--large interactive-hover">
+            <div class="card__header">
+              <h3>Spending Overview</h3>
+              <select class="chart-period filter-select">
+                <option>Last 7 days</option>
+                <option>Last 30 days</option>
+                <option selected>Last 3 months</option>
+                <option>Last year</option>
+              </select>
+            </div>
+            <div class="chart-container">
+              <div class="chart-placeholder">
+                <div class="chart-bars">
+                  <div class="bar" style="height: 60%">
+                    <span class="bar-label">Jan</span>
+                  </div>
+                  <div class="bar" style="height: 75%">
+                    <span class="bar-label">Feb</span>
+                  </div>
+                  <div class="bar" style="height: 45%">
+                    <span class="bar-label">Mar</span>
+                  </div>
+                  <div class="bar" style="height: 80%">
+                    <span class="bar-label">Apr</span>
+                  </div>
+                  <div class="bar" style="height: 65%">
+                    <span class="bar-label">May</span>
+                  </div>
+                  <div class="bar" style="height: 90%">
+                    <span class="bar-label">Jun</span>
+                  </div>
+                </div>
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <span class="legend-color income"></span>
+                    <span>Income</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color expense"></span>
+                    <span>Expenses</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category Breakdown -->
+          <div class="analytics-card interactive-hover">
+            <div class="card__header">
+              <h3>Spending by Category</h3>
+            </div>
+            <div class="category-list">
+              <div class="category-item">
+                <div class="category-info">
+                  <span class="category-name">🍔 Food & Dining</span>
+                  <span class="category-amount">$420</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 35%"></div>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-info">
+                  <span class="category-name">🚗 Transportation</span>
+                  <span class="category-amount">$280</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 23%"></div>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-info">
+                  <span class="category-name">🎬 Entertainment</span>
+                  <span class="category-amount">$180</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 15%"></div>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-info">
+                  <span class="category-name">🛍️ Shopping</span>
+                  <span class="category-amount">$150</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 12%"></div>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-info">
+                  <span class="category-name">💡 Bills & Utilities</span>
+                  <span class="category-amount">$120</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 10%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Transactions and Insights -->
+      <section class="recent-section">
+        <div class="recent__grid">
+          <!-- Recent Transactions -->
+          <div class="recent-card interactive-hover">
+            <div class="card__header">
+              <h3>Recent Transactions</h3>
+              <a
+                href="transactions.html"
+                class="btn btn--secondary btn--small btn-press"
+              >
+                View All
+              </a>
+            </div>
+            <div class="transactions-list" id="recent-transactions">
+              <div class="transaction-item income">
+                <div class="transaction-icon">
+                  <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <div class="transaction-details">
+                  <div class="transaction-description">Salary Deposit</div>
+                  <div class="transaction-meta">
+                    <span class="transaction-category">Salary</span>
+                    <span class="transaction-date">Today</span>
+                  </div>
+                </div>
+                <div class="transaction-amount income">+$2,500.00</div>
+              </div>
+              <div class="transaction-item expense">
+                <div class="transaction-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="transaction-details">
+                  <div class="transaction-description">Grocery Shopping</div>
+                  <div class="transaction-meta">
+                    <span class="transaction-category">Food</span>
+                    <span class="transaction-date">Yesterday</span>
+                  </div>
+                </div>
+                <div class="transaction-amount expense">-$85.50</div>
+              </div>
+              <div class="transaction-item expense">
+                <div class="transaction-icon">
+                  <i class="fas fa-gas-pump"></i>
+                </div>
+                <div class="transaction-details">
+                  <div class="transaction-description">Gas Station</div>
+                  <div class="transaction-meta">
+                    <span class="transaction-category">Transportation</span>
+                    <span class="transaction-date">2 days ago</span>
+                  </div>
+                </div>
+                <div class="transaction-amount expense">-$45.00</div>
+              </div>
+              <div class="transaction-item expense">
+                <div class="transaction-icon">
+                  <i class="fas fa-film"></i>
+                </div>
+                <div class="transaction-details">
+                  <div class="transaction-description">
+                    Netflix Subscription
+                  </div>
+                  <div class="transaction-meta">
+                    <span class="transaction-category">Entertainment</span>
+                    <span class="transaction-date">3 days ago</span>
+                  </div>
+                </div>
+                <div class="transaction-amount expense">-$15.99</div>
+              </div>
+            </div>
+            <div class="card__footer">
+              <button
+                class="btn btn--primary btn--small btn-press"
+                id="quick-add-transaction"
+              >
+                <i class="fas fa-plus"></i>
+                Add Transaction
+              </button>
+            </div>
+          </div>
+
+          <!-- Financial Insights -->
+          <div class="recent-card interactive-hover">
+            <div class="card__header">
+              <h3>Financial Insights</h3>
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="insights-list">
+              <div class="insight-item positive">
+                <div class="insight-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="insight-content">
+                  <h4>Great Savings Rate! 🎉</h4>
+                  <p>
+                    You're saving 25% of your income this month. Keep it up!
+                  </p>
+                </div>
+              </div>
+              <div class="insight-item warning">
+                <div class="insight-icon">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="insight-content">
+                  <h4>High Dining Expenses</h4>
+                  <p>
+                    You've spent 40% more on dining out compared to last month.
+                  </p>
+                </div>
+              </div>
+              <div class="insight-item info">
+                <div class="insight-icon">
+                  <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="insight-content">
+                  <h4>Goal Progress</h4>
+                  <p>
+                    You're 3 months away from reaching your emergency fund goal.
+                  </p>
+                </div>
+              </div>
+              <div class="insight-item positive">
+                <div class="insight-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="insight-content">
+                  <h4>Investment Opportunity</h4>
+                  <p>
+                    Consider investing your extra $1,200 in a high-yield savings
+                    account.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Game Progress Section -->
+      <section class="game-progress-section">
+        <div class="section-header">
+          <h3>🎮 Game Progress</h3>
+          <a href="game.html" class="btn btn--primary btn-press">
+            <i class="fas fa-play"></i>
+            Continue Playing
+          </a>
+        </div>
+        <div class="game-progress-grid">
+          <div class="game-stat-card interactive-hover">
+            <div class="game-stat-icon">💰</div>
+            <div class="game-stat-content">
+              <h4>Virtual Cash</h4>
+              <div class="game-stat-value" id="virtual-cash">$5,000</div>
+              <div class="game-stat-progress">
+                <div class="progress-bar small">
+                  <div class="progress-fill" style="width: 60%"></div>
+                </div>
+                <span>Level 5 Progress</span>
+              </div>
+            </div>
+          </div>
+          <div class="game-stat-card interactive-hover">
+            <div class="game-stat-icon">🏆</div>
+            <div class="game-stat-content">
+              <h4>Badges Earned</h4>
+              <div class="game-stat-value" id="badges-earned">3/15</div>
+              <div class="badge-preview">
+                <span class="badge-mini">💰</span>
+                <span class="badge-mini">🎯</span>
+                <span class="badge-mini">💪</span>
+                <span class="badge-more">+12 more</span>
+              </div>
+            </div>
+          </div>
+          <div class="game-stat-card interactive-hover">
+            <div class="game-stat-icon">📊</div>
+            <div class="game-stat-content">
+              <h4>Financial Health</h4>
+              <div class="game-stat-value" id="financial-health">78%</div>
+              <div class="health-indicator">
+                <span class="health-status good">Good</span>
+                <span class="health-tip">Better than 65% of players</span>
+              </div>
+            </div>
+          </div>
+          <div class="game-stat-card interactive-hover">
+            <div class="game-stat-icon">🔥</div>
+            <div class="game-stat-content">
+              <h4>Current Streak</h4>
+              <div class="game-stat-value" id="game-streak">7 days</div>
+              <div class="streak-info">
+                <span class="streak-bonus">+50% rewards active!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Actions -->
+      <section class="quick-actions-section">
+        <div class="section-header">
+          <h3>⚡ Quick Actions</h3>
+          <span>Frequently used features</span>
+        </div>
+        <div class="quick-actions-grid">
+          <a href="game.html" class="quick-action interactive-hover">
+            <div class="action-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <div class="action-content">
+              <h4>Play Scenarios</h4>
+              <p>Test your financial skills</p>
+            </div>
+          </a>
+          <a href="transactions.html" class="quick-action interactive-hover">
+            <div class="action-icon">
+              <i class="fas fa-exchange-alt"></i>
+            </div>
+            <div class="action-content">
+              <h4>Add Transaction</h4>
+              <p>Record income or expense</p>
+            </div>
+          </a>
+          <a href="goals.html" class="quick-action interactive-hover">
+            <div class="action-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="action-content">
+              <h4>Set Goal</h4>
+              <p>Create savings target</p>
+            </div>
+          </a>
+          <a href="badges.html" class="quick-action interactive-hover">
+            <div class="action-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="action-content">
+              <h4>View Badges</h4>
+              <p>Check achievements</p>
+            </div>
+          </a>
+          <a href="real-money.html" class="quick-action interactive-hover">
+            <div class="action-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="action-content">
+              <h4>Real Money</h4>
+              <p>Track actual finances</p>
+            </div>
+          </a>
+          <div class="quick-action interactive-hover" id="quick-prediction">
+            <div class="action-icon">
+              <i class="fas fa-crystal-ball"></i>
+            </div>
+            <div class="action-content">
+              <h4>Financial Forecast</h4>
+              <p>See future predictions</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Financial Predictor -->
+      <section class="predictor-section">
+        <div class="predictor-card glass-effect interactive-hover">
+          <div class="predictor-header">
+            <h3>💰 Money Crystal Ball 🔮</h3>
+            <div class="prediction-confidence">
+              <span class="confidence-level high">92% Accurate</span>
+            </div>
+          </div>
+          <div class="predictor-content">
+            <div class="prediction-result">
+              <div class="prediction-emoji">📈</div>
+              <div class="prediction-text">
+                <h4>Looking Good! 🎉</h4>
+                <p>
+                  At your current spending rate, you'll reach your emergency
+                  fund goal in 3 months and have $2,800 leftover for
+                  investments.
+                </p>
+              </div>
+            </div>
+            <div class="prediction-details">
+              <div class="prediction-stat">
+                <span class="stat-label">Days until next goal:</span>
+                <span class="stat-value positive">87 days</span>
+              </div>
+              <div class="prediction-stat">
+                <span class="stat-label">Monthly surplus:</span>
+                <span class="stat-value positive">$450</span>
+              </div>
+              <div class="prediction-stat">
+                <span class="stat-label">Risk level:</span>
+                <span class="stat-value low">Low</span>
+              </div>
+            </div>
+            <div class="prediction-tip">
+              <i class="fas fa-lightbulb"></i>
+              <span
+                ><strong>Pro Tip:</strong> Consider increasing your emergency
+                fund target to $7,000 for better security.</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating Action Button -->
+    <button
+      class="fab pulse-notification"
+      id="quick-action-fab"
+      title="Quick Actions"
+    >
+      <i class="fas fa-bolt"></i>
+    </button>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__section">
+            <div class="footer__logo">
+              <i class="fas fa-piggy-bank"></i>
+              <h3>SaveSmart</h3>
+            </div>
+            <p>Your complete financial wellness platform.</p>
+          </div>
+          <div class="footer__section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="transactions.html">Transactions</a></li>
+              <li><a href="goals.html">Goals</a></li>
+              <li><a href="badges.html">Badges</a></li>
+            </ul>
+          </div>
+          <div class="footer__section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2024 SaveSmart. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Quick Add Transaction Modal -->
+    <div class="modal" id="quick-transaction-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3>Quick Add Transaction</h3>
+          <button class="modal__close" id="transaction-modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <form id="quick-transaction-form">
+            <div class="form__group">
+              <label for="quick-amount">Amount</label>
+              <input
+                type="number"
+                id="quick-amount"
+                placeholder="0.00"
+                step="0.01"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label for="quick-description">Description</label>
+              <input
+                type="text"
+                id="quick-description"
+                placeholder="What was this for?"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <div class="form__group">
+                <label for="quick-type">Type</label>
+                <select id="quick-type" required>
+                  <option value="income">Income 💰</option>
+                  <option value="expense">Expense 💸</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label for="quick-category">Category</label>
+                <select id="quick-category" required>
+                  <option value="food">Food & Dining</option>
+                  <option value="transport">Transportation</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="shopping">Shopping</option>
+                  <option value="bills">Bills & Utilities</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full btn-press">
+              <i class="fas fa-check"></i>
+              Add Transaction
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Financial Forecast Modal -->
+    <div class="modal" id="forecast-modal">
+      <div class="modal__content modal__content--large">
+        <div class="modal__header">
+          <h3>Detailed Financial Forecast 🔮</h3>
+          <button class="modal__close" id="forecast-modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <div class="forecast-content">
+            <div class="forecast-periods">
+              <button class="period-btn active btn-press" data-period="30">
+                30 Days
+              </button>
+              <button class="period-btn btn-press" data-period="90">
+                90 Days
+              </button>
+              <button class="period-btn btn-press" data-period="180">
+                6 Months
+              </button>
+              <button class="period-btn btn-press" data-period="365">
+                1 Year
+              </button>
+            </div>
+            <div class="forecast-chart">
+              <div class="chart-placeholder">
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <span class="timeline-date">Now</span>
+                    <div class="timeline-balance">$12,458</div>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="timeline-date">30 days</span>
+                    <div class="timeline-balance positive">$13,208</div>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="timeline-date">90 days</span>
+                    <div class="timeline-balance positive">$14,858</div>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="timeline-date">180 days</span>
+                    <div class="timeline-balance positive">$17,258</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="forecast-insights">
+              <div class="insight positive">
+                <i class="fas fa-trophy"></i>
+                <div class="insight-content">
+                  <strong>Goal Achievement</strong>
+                  <p>You'll reach your emergency fund goal in 87 days</p>
+                </div>
+              </div>
+              <div class="insight info">
+                <i class="fas fa-lightbulb"></i>
+                <div class="insight-content">
+                  <strong>Investment Opportunity</strong>
+                  <p>
+                    Consider investing $5,000 once you hit your emergency fund
+                  </p>
+                </div>
+              </div>
+              <div class="insight warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="insight-content">
+                  <strong>Watch Out</strong>
+                  <p>
+                    Your dining expenses are trending 15% higher than last
+                    quarter
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Celebration Container -->
+    <div id="celebration-container"></div>
+
+    <script src="js/app.js"></script>
+    <script src="js/confetti.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Savings Goals - SaveSmart</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <i class="fas fa-piggy-bank"></i>
+          <div>
+            <h1>SaveSmart</h1>
+            <p class="slogan">Dream Big, Save Smart 🎯</p>
+          </div>
+        </div>
+
+        <ul class="nav__menu" id="nav-menu">
+          <li class="nav__item">
+            <a href="dashboard.html" class="nav__link">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="game.html" class="nav__link">
+              <i class="fas fa-gamepad"></i>
+              <span>Money Game</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="real-money.html" class="nav__link">
+              <i class="fas fa-chart-line"></i>
+              <span>Real Money</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="transactions.html" class="nav__link">
+              <i class="fas fa-exchange-alt"></i>
+              <span>Transactions</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="goals.html" class="nav__link active">
+              <i class="fas fa-bullseye"></i>
+              <span>Goals</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="badges.html" class="nav__link">
+              <i class="fas fa-trophy"></i>
+              <span>Badges</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav__actions">
+          <div class="currency-selector">
+            <select id="currency-select" class="filter-select">
+              <option value="USD">$ USD</option>
+              <option value="EUR">€ EUR</option>
+              <option value="GBP">£ GBP</option>
+              <option value="JPY">¥ JPY</option>
+              <option value="CAD">$ CAD</option>
+              <option value="AUD">$ AUD</option>
+              <option value="GHS">₵ GHS</option>
+              <option value="NGN">₦ NGN</option>
+              <option value="KES">KSh KES</option>
+              <option value="ZAR">R ZAR</option>
+            </select>
+          </div>
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main container">
+      <!-- Page Header -->
+      <section class="page-header">
+        <h1 class="page-title">Savings Goals</h1>
+        <p>Turn your dreams into reality, one save at a time ✨</p>
+      </section>
+
+      <!-- Goals Summary -->
+      <section class="goals-summary">
+        <div class="summary-grid">
+          <div class="summary-card interactive-hover">
+            <div class="summary-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-label">Active Goals</div>
+              <div class="summary-amount" id="active-goals">0</div>
+            </div>
+          </div>
+          <div class="summary-card interactive-hover">
+            <div class="summary-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-label">Completed Goals</div>
+              <div class="summary-amount" id="completed-goals">0</div>
+            </div>
+          </div>
+          <div class="summary-card interactive-hover">
+            <div class="summary-icon">
+              <i class="fas fa-piggy-bank"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-label">Total Saved</div>
+              <div class="summary-amount" id="total-saved">$0.00</div>
+            </div>
+          </div>
+          <div class="summary-card interactive-hover">
+            <div class="summary-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-label">Overall Progress</div>
+              <div class="summary-amount" id="overall-progress">0%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Progress -->
+      <section class="quick-progress">
+        <div class="progress-card glass-effect">
+          <div class="progress-header">
+            <h3>🚀 Your Savings Journey</h3>
+            <div class="progress-stats">
+              <span id="total-target">$0</span> total target •
+              <span id="saved-so-far">$0</span> saved
+            </div>
+          </div>
+          <div class="overall-progress-bar">
+            <div class="progress-bar large">
+              <div
+                class="progress-fill"
+                id="overall-progress-bar"
+                style="width: 0%"
+              ></div>
+            </div>
+            <div class="progress-text">
+              <span
+                >Overall Progress:
+                <strong id="overall-percentage">0%</strong></span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Create Goal Form -->
+      <section class="create-goal-section">
+        <div class="card interactive-hover">
+          <div class="card__header">
+            <h3>🎯 Create New Goal</h3>
+            <i class="fas fa-plus-circle"></i>
+          </div>
+          <form class="goal-form" id="create-goal-form">
+            <div class="form-row">
+              <div class="form__group">
+                <label for="goal-name">Goal Name</label>
+                <input
+                  type="text"
+                  id="goal-name"
+                  placeholder="e.g., Vacation, New Laptop, Emergency Fund"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label for="goal-target">Target Amount</label>
+                <input
+                  type="number"
+                  id="goal-target"
+                  placeholder="0.00"
+                  step="0.01"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form__group">
+                <label for="goal-deadline">Target Date (Optional)</label>
+                <input type="date" id="goal-deadline" />
+              </div>
+              <div class="form__group">
+                <label for="goal-category">Category</label>
+                <select id="goal-category">
+                  <option value="emergency">🛡️ Emergency Fund</option>
+                  <option value="vacation">🏖️ Vacation</option>
+                  <option value="education">🎓 Education</option>
+                  <option value="home">🏠 Home</option>
+                  <option value="vehicle">🚗 Vehicle</option>
+                  <option value="gadgets">📱 Gadgets</option>
+                  <option value="fashion">👗 Fashion</option>
+                  <option value="health">💊 Health</option>
+                  <option value="retirement">👵 Retirement</option>
+                  <option value="other">📦 Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label for="goal-description">Why this goal? (Optional)</label>
+              <textarea
+                id="goal-description"
+                rows="3"
+                placeholder="What makes this goal special? How will it improve your life?"
+              ></textarea>
+            </div>
+            <div class="form__group">
+              <label for="goal-color">Goal Color</label>
+              <div class="color-picker">
+                <input
+                  type="radio"
+                  name="goal-color"
+                  value="#667eea"
+                  id="color-blue"
+                  checked
+                />
+                <label
+                  for="color-blue"
+                  class="color-option"
+                  style="background: #667eea"
+                ></label>
+
+                <input
+                  type="radio"
+                  name="goal-color"
+                  value="#4CAF50"
+                  id="color-green"
+                />
+                <label
+                  for="color-green"
+                  class="color-option"
+                  style="background: #4caf50"
+                ></label>
+
+                <input
+                  type="radio"
+                  name="goal-color"
+                  value="#FF9800"
+                  id="color-orange"
+                />
+                <label
+                  for="color-orange"
+                  class="color-option"
+                  style="background: #ff9800"
+                ></label>
+
+                <input
+                  type="radio"
+                  name="goal-color"
+                  value="#9C27B0"
+                  id="color-purple"
+                />
+                <label
+                  for="color-purple"
+                  class="color-option"
+                  style="background: #9c27b0"
+                ></label>
+
+                <input
+                  type="radio"
+                  name="goal-color"
+                  value="#F44336"
+                  id="color-red"
+                />
+                <label
+                  for="color-red"
+                  class="color-option"
+                  style="background: #f44336"
+                ></label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full btn-press">
+              <i class="fas fa-plus"></i>
+              Create Goal
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Goals List -->
+      <section class="goals-list-section">
+        <div class="section-header">
+          <h3>My Goals</h3>
+          <div class="view-options">
+            <button
+              class="btn btn--secondary btn--small active btn-press"
+              data-filter="all"
+            >
+              All Goals
+            </button>
+            <button
+              class="btn btn--secondary btn--small btn-press"
+              data-filter="active"
+            >
+              Active
+            </button>
+            <button
+              class="btn btn--secondary btn--small btn-press"
+              data-filter="completed"
+            >
+              Completed
+            </button>
+            <button
+              class="btn btn--secondary btn--small btn-press"
+              data-filter="behind"
+            >
+              Behind Schedule
+            </button>
+          </div>
+        </div>
+
+        <div class="goals-grid" id="goals-grid">
+          <!-- Goals will be populated by JavaScript -->
+        </div>
+
+        <div class="empty-state" id="empty-goals">
+          <i class="fas fa-bullseye"></i>
+          <h4>No goals yet</h4>
+          <p>Create your first savings goal to start your financial journey!</p>
+          <div class="goal-suggestions">
+            <h5>💡 Popular First Goals:</h5>
+            <div class="suggestion-cards">
+              <div
+                class="suggestion-card interactive-hover"
+                data-suggestion="emergency"
+              >
+                <div class="suggestion-icon">🛡️</div>
+                <div class="suggestion-content">
+                  <strong>$1,000 Emergency Fund</strong>
+                  <span>Safety net for unexpected expenses</span>
+                </div>
+              </div>
+              <div
+                class="suggestion-card interactive-hover"
+                data-suggestion="vacation"
+              >
+                <div class="suggestion-icon">🏖️</div>
+                <div class="suggestion-content">
+                  <strong>Dream Vacation</strong>
+                  <span>Save for that perfect getaway</span>
+                </div>
+              </div>
+              <div
+                class="suggestion-card interactive-hover"
+                data-suggestion="gadget"
+              >
+                <div class="suggestion-icon">📱</div>
+                <div class="suggestion-content">
+                  <strong>New Phone</strong>
+                  <span>Upgrade your tech without debt</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Goal Insights -->
+      <section class="goal-insights">
+        <div class="insights-grid">
+          <div class="insight-card interactive-hover">
+            <div class="insight-header">
+              <h4>📈 Progress Trends</h4>
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="insight-content">
+              <div class="trend-indicator" id="savings-trend">
+                <div class="trend-icon">📊</div>
+                <div class="trend-info">
+                  <strong>Start Tracking!</strong>
+                  <p>Create goals to see your savings trends</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-card interactive-hover">
+            <div class="insight-header">
+              <h4>⏰ Time Management</h4>
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="insight-content">
+              <div class="time-metrics">
+                <div class="time-metric">
+                  <span class="metric-value" id="avg-completion">0</span>
+                  <span class="metric-label">Avg. Completion Days</span>
+                </div>
+                <div class="time-metric">
+                  <span class="metric-value" id="on-track-goals">0</span>
+                  <span class="metric-label">Goals On Track</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-card interactive-hover">
+            <div class="insight-header">
+              <h4>🎯 Achievement Rate</h4>
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="insight-content">
+              <div class="achievement-rate">
+                <div class="rate-circle">
+                  <div class="circle-progress" data-value="0">
+                    <span>0%</span>
+                  </div>
+                </div>
+                <div class="rate-info">
+                  <strong>Success Rate</strong>
+                  <p>Of goals completed on time</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Motivational Section -->
+      <section class="motivational-section">
+        <div class="motivational-card glass-effect">
+          <div class="motivational-content">
+            <div class="motivational-icon">💫</div>
+            <div class="motivational-text">
+              <h3>Every Great Achievement Was Once Considered Impossible</h3>
+              <p>
+                Your savings goals are the stepping stones to your dreams. Keep
+                going! 🚀
+              </p>
+              <div class="motivational-stats">
+                <div class="stat">
+                  <span class="stat-number" id="total-goals-created">0</span>
+                  <span class="stat-label">Goals Created</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number" id="total-goals-completed">0</span>
+                  <span class="stat-label">Goals Achieved</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number" id="total-money-saved">$0</span>
+                  <span class="stat-label">Total Saved</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Add Funds -->
+      <section class="quick-add-section">
+        <div class="quick-add-card interactive-hover">
+          <div class="quick-add-header">
+            <h4>💸 Quick Add Funds</h4>
+            <p>Boost your goals with extra savings</p>
+          </div>
+          <div class="quick-add-options">
+            <button class="quick-add-btn btn-press" data-amount="10">
+              +$10
+            </button>
+            <button class="quick-add-btn btn-press" data-amount="25">
+              +$25
+            </button>
+            <button class="quick-add-btn btn-press" data-amount="50">
+              +$50
+            </button>
+            <button class="quick-add-btn btn-press" data-amount="100">
+              +$100
+            </button>
+            <button class="quick-add-btn btn-press" id="custom-amount-btn">
+              Custom
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating Action Button -->
+    <button
+      class="fab pulse-notification"
+      id="quick-goal-fab"
+      title="Create New Goal"
+    >
+      <i class="fas fa-plus"></i>
+    </button>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__section">
+            <div class="footer__logo">
+              <i class="fas fa-piggy-bank"></i>
+              <h3>SaveSmart</h3>
+            </div>
+            <p>Turning dreams into achievable goals, one save at a time.</p>
+          </div>
+          <div class="footer__section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="transactions.html">Transactions</a></li>
+              <li><a href="goals.html">Goals</a></li>
+              <li><a href="badges.html">Badges</a></li>
+            </ul>
+          </div>
+          <div class="footer__section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2024 SaveSmart. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Add Funds Modal -->
+    <div class="modal" id="add-funds-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3 id="add-funds-title">Add Funds to Goal</h3>
+          <button class="modal__close" id="add-funds-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <form class="modal__form" id="add-funds-form">
+            <input type="hidden" id="funds-goal-id" />
+            <div class="form__group">
+              <label for="funds-amount">Amount to Add</label>
+              <input
+                type="number"
+                id="funds-amount"
+                placeholder="0.00"
+                step="0.01"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label for="funds-date">Date</label>
+              <input type="date" id="funds-date" required />
+            </div>
+            <div class="form__group">
+              <label for="funds-description">Description (Optional)</label>
+              <input
+                type="text"
+                id="funds-description"
+                placeholder="e.g., Monthly savings, Bonus, Gift"
+              />
+            </div>
+            <div class="balance-info">
+              <span>Available Balance: </span>
+              <span id="available-balance">$0.00</span>
+            </div>
+            <div class="progress-preview">
+              <div class="preview-header">
+                <span>New Progress:</span>
+                <span id="new-progress-percentage">0%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill"
+                  id="new-progress-bar"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full btn-press">
+              <i class="fas fa-plus"></i>
+              Add Funds
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Goal Details Modal -->
+    <div class="modal" id="goal-details-modal">
+      <div class="modal__content modal__content--large">
+        <div class="modal__header">
+          <h3 id="goal-details-title">Goal Details</h3>
+          <button class="modal__close" id="goal-details-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <div class="goal-details-content" id="goal-details-content">
+            <!-- Goal details will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Goal Modal -->
+    <div class="modal" id="edit-goal-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3>Edit Goal</h3>
+          <button class="modal__close" id="edit-goal-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <form id="edit-goal-form">
+            <input type="hidden" id="edit-goal-id" />
+            <div class="form__group">
+              <label for="edit-goal-name">Goal Name</label>
+              <input type="text" id="edit-goal-name" required />
+            </div>
+            <div class="form__group">
+              <label for="edit-goal-target">Target Amount</label>
+              <input type="number" id="edit-goal-target" step="0.01" required />
+            </div>
+            <div class="form__group">
+              <label for="edit-goal-deadline">Target Date</label>
+              <input type="date" id="edit-goal-deadline" />
+            </div>
+            <div class="form__group">
+              <label for="edit-goal-description">Description</label>
+              <textarea id="edit-goal-description" rows="3"></textarea>
+            </div>
+            <div class="form__actions">
+              <button type="submit" class="btn btn--primary btn-press">
+                <i class="fas fa-save"></i>
+                Save Changes
+              </button>
+              <button
+                type="button"
+                class="btn btn--danger btn-press"
+                id="delete-goal"
+              >
+                <i class="fas fa-trash"></i>
+                Delete Goal
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Amount Modal -->
+    <div class="modal" id="custom-amount-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3>Add Custom Amount</h3>
+          <button class="modal__close" id="custom-amount-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <form id="custom-amount-form">
+            <div class="form__group">
+              <label for="custom-amount">Amount</label>
+              <input
+                type="number"
+                id="custom-amount"
+                placeholder="0.00"
+                step="0.01"
+                required
+              />
+            </div>
+            <div class="goal-selection">
+              <label>Select Goal:</label>
+              <div class="goal-options" id="goal-options">
+                <!-- Goal options will be populated by JavaScript -->
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full btn-press">
+              <i class="fas fa-plus"></i>
+              Add to Goal
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Celebration Container -->
+    <div id="celebration-container"></div>
+
+    <script src="js/app.js"></script>
+    <script src="js/confetti.js"></script>
+    <script src="js/goals.js"></script>
+  </body>
+</html>

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Money Tracker - SaveSmart</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <i class="fas fa-piggy-bank"></i>
+          <div>
+            <h1>SaveSmart</h1>
+            <p class="slogan">Real Money, Real Results 💪</p>
+          </div>
+        </div>
+
+        <ul class="nav__menu" id="nav-menu">
+          <li class="nav__item">
+            <a href="dashboard.html" class="nav__link">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="game.html" class="nav__link">
+              <i class="fas fa-gamepad"></i>
+              <span>Money Game</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="real-money.html" class="nav__link active">
+              <i class="fas fa-chart-line"></i>
+              <span>Real Money</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="goals.html" class="nav__link">
+              <i class="fas fa-bullseye"></i>
+              <span>Goals</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="badges.html" class="nav__link">
+              <i class="fas fa-trophy"></i>
+              <span>Badges</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav__actions">
+          <div class="currency-selector">
+            <select id="currency-select" class="filter-select">
+              <option value="USD">$ USD</option>
+              <option value="EUR">€ EUR</option>
+              <option value="GBP">£ GBP</option>
+              <option value="JPY">¥ JPY</option>
+              <option value="CAD">$ CAD</option>
+              <option value="AUD">$ AUD</option>
+              <option value="GHS">₵ GHS</option>
+              <option value="NGN">₦ NGN</option>
+              <option value="KES">KSh KES</option>
+              <option value="ZAR">R ZAR</option>
+            </select>
+          </div>
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main container">
+      <!-- Security Notice -->
+      <section class="security-notice">
+        <div class="notice-card interactive-hover">
+          <div class="notice-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="notice-content">
+            <h4>Your Financial Data is 100% Secure 🔒</h4>
+            <p>
+              We use bank-level encryption and never store your actual bank
+              credentials. All data stays on your device.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Real Money Dashboard -->
+      <section class="real-money-dashboard">
+        <div class="dashboard-header">
+          <h2>Your Real Finances</h2>
+          <p>Apply your virtual skills to real money management</p>
+        </div>
+
+        <div class="financial-overview">
+          <div class="overview-grid">
+            <div class="overview-card primary interactive-hover">
+              <div class="card-header">
+                <h4>Total Balance</h4>
+                <i class="fas fa-wallet"></i>
+              </div>
+              <div class="balance-amount" id="real-balance">$0.00</div>
+              <div class="balance-trend">
+                <i class="fas fa-arrow-up"></i>
+                <span>Set up your accounts to start tracking</span>
+              </div>
+            </div>
+
+            <div class="overview-card interactive-hover">
+              <div class="card-header">
+                <h4>Monthly Budget</h4>
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <div class="budget-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="budget-text">
+                  <span>$0</span>
+                  <span>$0</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <span>Set your first budget</span>
+              </div>
+            </div>
+
+            <div class="overview-card interactive-hover">
+              <div class="card-header">
+                <h4>Savings Rate</h4>
+                <i class="fas fa-piggy-bank"></i>
+              </div>
+              <div class="savings-rate">0%</div>
+              <div class="card-footer">
+                <span>Of your income</span>
+              </div>
+            </div>
+
+            <div class="overview-card interactive-hover">
+              <div class="card-header">
+                <h4>Financial Health</h4>
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <div class="health-score">
+                <div class="score-circle">
+                  <div class="circle-progress" data-value="0">
+                    <span>0%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <span>Based on your habits</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Account Setup -->
+        <section class="account-setup">
+          <div class="setup-card glass-effect">
+            <div class="setup-header">
+              <h3>Let's Get Started! 🚀</h3>
+              <p>Choose how you want to track your real money</p>
+            </div>
+
+            <div class="setup-options">
+              <div class="setup-option interactive-hover" data-type="manual">
+                <div class="option-icon">
+                  <i class="fas fa-keyboard"></i>
+                </div>
+                <div class="option-content">
+                  <h4>Manual Entry</h4>
+                  <p>
+                    Enter your transactions manually. 100% private and secure.
+                  </p>
+                  <ul>
+                    <li>✅ Complete privacy</li>
+                    <li>✅ No bank connections</li>
+                    <li>✅ Full control</li>
+                    <li>✅ Works everywhere</li>
+                  </ul>
+                  <button
+                    class="btn btn--primary btn-press"
+                    id="start-manual-tracking"
+                  >
+                    <i class="fas fa-rocket"></i>
+                    Start Manual Tracking
+                  </button>
+                </div>
+              </div>
+
+              <div class="setup-option interactive-hover" data-type="bank">
+                <div class="option-icon">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div class="option-content">
+                  <h4>Bank Connection</h4>
+                  <p>
+                    Connect your bank for automatic tracking (Read-only access).
+                  </p>
+                  <ul>
+                    <li>⚡ Automatic updates</li>
+                    <li>🔒 Read-only access</li>
+                    <li>📊 Real-time insights</li>
+                    <li>🏦 Bank-level security</li>
+                  </ul>
+                  <button
+                    class="btn btn--secondary btn-press"
+                    id="connect-bank"
+                  >
+                    <i class="fas fa-plug"></i>
+                    Connect Bank
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section
+          class="quick-actions-section"
+          style="display: none"
+          id="quick-actions"
+        >
+          <h3>Quick Actions ⚡</h3>
+          <div class="quick-actions-grid">
+            <button class="quick-action-btn interactive-hover" id="add-income">
+              <div class="action-icon">
+                <i class="fas fa-money-bill-wave"></i>
+              </div>
+              <div class="action-content">
+                <h4>Add Income</h4>
+                <p>Record new income</p>
+              </div>
+            </button>
+            <button class="quick-action-btn interactive-hover" id="add-expense">
+              <div class="action-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="action-content">
+                <h4>Add Expense</h4>
+                <p>Record new spending</p>
+              </div>
+            </button>
+            <button class="quick-action-btn interactive-hover" id="set-budget">
+              <div class="action-icon">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <div class="action-content">
+                <h4>Set Budget</h4>
+                <p>Create spending limits</p>
+              </div>
+            </button>
+            <button
+              class="quick-action-btn interactive-hover"
+              id="view-reports"
+            >
+              <div class="action-icon">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <div class="action-content">
+                <h4>View Reports</h4>
+                <p>See spending analytics</p>
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <!-- Recent Transactions -->
+        <section
+          class="recent-transactions"
+          style="display: none"
+          id="recent-transactions"
+        >
+          <div class="section-header">
+            <h3>Recent Transactions</h3>
+            <a href="transactions.html" class="btn btn--secondary btn--small">
+              View All
+            </a>
+          </div>
+          <div class="transactions-list" id="real-transactions-list">
+            <!-- Transactions will be populated by JavaScript -->
+          </div>
+          <div class="empty-state" id="empty-transactions">
+            <i class="fas fa-receipt"></i>
+            <h4>No transactions yet</h4>
+            <p>Start tracking your income and expenses</p>
+          </div>
+        </section>
+
+        <!-- Financial Predictor -->
+        <section class="financial-predictor">
+          <div class="predictor-card interactive-hover">
+            <div class="predictor-header">
+              <h3>💰 Money Crystal Ball 🔮</h3>
+              <p>See into your financial future based on your current habits</p>
+            </div>
+
+            <div class="predictor-content">
+              <div class="prediction-result">
+                <div class="prediction-emoji">🤔</div>
+                <div class="prediction-text">
+                  <h4>Start Tracking to See Predictions</h4>
+                  <p>
+                    Once you add your income and expenses, I'll tell you exactly
+                    when you'll run out of money (with some savage but helpful
+                    commentary)!
+                  </p>
+                </div>
+              </div>
+
+              <div class="prediction-features">
+                <div class="feature">
+                  <i class="fas fa-bolt"></i>
+                  <span>"At this rate, you'll be broke by..." predictions</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-grin-squint-tears"></i>
+                  <span>Funny but real talk about your spending</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-lightbulb"></i>
+                  <span>Personalized tips to improve</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Virtual to Real Transfer -->
+        <section class="skill-transfer">
+          <div class="transfer-card glass-effect">
+            <div class="transfer-header">
+              <h3>🎮→💪 Apply Your Virtual Skills</h3>
+              <p>Your game performance translated to real-world advice</p>
+            </div>
+
+            <div class="transfer-content">
+              <div class="skill-metric interactive-hover">
+                <div class="metric-icon">💸</div>
+                <div class="metric-info">
+                  <strong>Impulse Control</strong>
+                  <span
+                    >Virtual Score: <span id="impulse-score">85%</span></span
+                  >
+                </div>
+                <div class="metric-advice">
+                  "You're great at resisting virtual impulse buys! Apply this to
+                  real life by implementing a 24-hour waiting rule."
+                </div>
+              </div>
+
+              <div class="skill-metric interactive-hover">
+                <div class="metric-icon">🎯</div>
+                <div class="metric-info">
+                  <strong>Goal Setting</strong>
+                  <span>Virtual Score: <span id="goal-score">72%</span></span>
+                </div>
+                <div class="metric-advice">
+                  "You achieved 3 virtual goals! Set one small real financial
+                  goal this month."
+                </div>
+              </div>
+
+              <div class="skill-metric interactive-hover">
+                <div class="metric-icon">📊</div>
+                <div class="metric-info">
+                  <strong>Budget Management</strong>
+                  <span>Virtual Score: <span id="budget-score">68%</span></span>
+                </div>
+                <div class="metric-advice">
+                  "You stayed within budget in 7 virtual scenarios. Try the
+                  50/30/20 rule for real finances."
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pro Tips -->
+        <section class="pro-tips">
+          <div class="tips-card interactive-hover">
+            <div class="tips-header">
+              <h3>💡 Pro Tips from Your Virtual Coach</h3>
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="tips-content">
+              <div class="tip-item">
+                <div class="tip-icon">⏰</div>
+                <div class="tip-text">
+                  <strong>24-Hour Rule</strong>
+                  <p>
+                    Wait 24 hours before making any purchase over $50. Your
+                    future self will thank you!
+                  </p>
+                </div>
+              </div>
+              <div class="tip-item">
+                <div class="tip-icon">📱</div>
+                <div class="tip-text">
+                  <strong>App Blocking</strong>
+                  <p>
+                    Delete shopping apps from your phone. Out of sight, out of
+                    mind (and wallet)!
+                  </p>
+                </div>
+              </div>
+              <div class="tip-item">
+                <div class="tip-icon">🎯</div>
+                <div class="tip-text">
+                  <strong>Micro-Goals</strong>
+                  <p>
+                    Set tiny daily savings goals. $5 today feels easier than
+                    $150 this month!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!-- Floating Action Button -->
+    <button class="fab" id="quick-add-fab" title="Quick Add Transaction">
+      <i class="fas fa-plus"></i>
+    </button>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__section">
+            <div class="footer__logo">
+              <i class="fas fa-piggy-bank"></i>
+              <h3>SaveSmart</h3>
+            </div>
+            <p>
+              Professional financial management tools for modern individuals and
+              families.
+            </p>
+          </div>
+          <div class="footer__section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="transactions.html">Transactions</a></li>
+              <li><a href="goals.html">Goals</a></li>
+              <li><a href="badges.html">Badges</a></li>
+            </ul>
+          </div>
+          <div class="footer__section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2024 SaveSmart. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Setup Modal -->
+    <div class="modal" id="setup-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3>Setup Your Real Money Tracking</h3>
+          <button class="modal__close" id="setup-modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <form id="real-money-setup">
+            <div class="form-section">
+              <h4>Basic Information</h4>
+              <div class="form__group">
+                <label for="monthly-income">Monthly Income</label>
+                <input
+                  type="number"
+                  id="monthly-income"
+                  placeholder="Enter your monthly income"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label for="savings-goal">Monthly Savings Goal</label>
+                <input
+                  type="number"
+                  id="savings-goal"
+                  placeholder="How much do you want to save?"
+                />
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4>Initial Balance</h4>
+              <div class="form__group">
+                <label for="current-balance">Current Cash Balance</label>
+                <input
+                  type="number"
+                  id="current-balance"
+                  placeholder="How much cash do you have?"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4>Spending Categories</h4>
+              <div class="categories-setup">
+                <div class="category-item">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="categories"
+                      value="food"
+                      checked
+                    />
+                    🍔 Food & Dining
+                  </label>
+                </div>
+                <div class="category-item">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="categories"
+                      value="transport"
+                      checked
+                    />
+                    🚗 Transportation
+                  </label>
+                </div>
+                <div class="category-item">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="categories"
+                      value="entertainment"
+                      checked
+                    />
+                    🎬 Entertainment
+                  </label>
+                </div>
+                <div class="category-item">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="categories"
+                      value="shopping"
+                      checked
+                    />
+                    🛍️ Shopping
+                  </label>
+                </div>
+                <div class="category-item">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="categories"
+                      value="bills"
+                      checked
+                    />
+                    💡 Bills & Utilities
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full btn-press">
+              <i class="fas fa-rocket"></i>
+              Start Tracking Real Money
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Transaction Modal -->
+    <div class="modal" id="add-transaction-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3 id="transaction-modal-title">Add Transaction</h3>
+          <button class="modal__close" id="transaction-modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <form id="add-transaction-form">
+            <div class="form__group">
+              <label for="transaction-type">Type</label>
+              <select id="transaction-type" required>
+                <option value="income">Income 💰</option>
+                <option value="expense">Expense 💸</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label for="transaction-amount">Amount</label>
+              <input
+                type="number"
+                id="transaction-amount"
+                placeholder="0.00"
+                step="0.01"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label for="transaction-description">Description</label>
+              <input
+                type="text"
+                id="transaction-description"
+                placeholder="What was this for?"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label for="transaction-category">Category</label>
+              <select id="transaction-category" required>
+                <option value="salary">Salary</option>
+                <option value="freelance">Freelance</option>
+                <option value="investment">Investment</option>
+                <option value="food">Food & Dining</option>
+                <option value="transport">Transportation</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="shopping">Shopping</option>
+                <option value="bills">Bills & Utilities</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label for="transaction-date">Date</label>
+              <input type="date" id="transaction-date" required />
+            </div>
+            <button type="submit" class="btn btn--primary btn--full btn-press">
+              <i class="fas fa-check"></i>
+              Add Transaction
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Set Budget Modal -->
+    <div class="modal" id="budget-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3>Set Monthly Budget</h3>
+          <button class="modal__close" id="budget-modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <form id="set-budget-form">
+            <div class="form__group">
+              <label for="total-budget">Total Monthly Budget</label>
+              <input
+                type="number"
+                id="total-budget"
+                placeholder="Enter your total budget"
+                required
+              />
+            </div>
+            <div class="budget-categories">
+              <h4>Category Budgets</h4>
+              <div class="category-budget">
+                <label>🍔 Food & Dining</label>
+                <input
+                  type="number"
+                  class="category-amount"
+                  data-category="food"
+                  placeholder="0.00"
+                />
+              </div>
+              <div class="category-budget">
+                <label>🚗 Transportation</label>
+                <input
+                  type="number"
+                  class="category-amount"
+                  data-category="transport"
+                  placeholder="0.00"
+                />
+              </div>
+              <div class="category-budget">
+                <label>🎬 Entertainment</label>
+                <input
+                  type="number"
+                  class="category-amount"
+                  data-category="entertainment"
+                  placeholder="0.00"
+                />
+              </div>
+              <div class="category-budget">
+                <label>🛍️ Shopping</label>
+                <input
+                  type="number"
+                  class="category-amount"
+                  data-category="shopping"
+                  placeholder="0.00"
+                />
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full btn-press">
+              <i class="fas fa-chart-pie"></i>
+              Set Budget
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Celebration Container -->
+    <div id="celebration-container"></div>
+
+    <script src="js/app.js"></script>
+    <script src="js/confetti.js"></script>
+    <script src="js/real-money.js"></script>
+  </body>
+</html>

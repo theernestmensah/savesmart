@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Game - SaveSmart</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <i class="fas fa-piggy-bank"></i>
+          <div>
+            <h1>SaveSmart</h1>
+            <p class="slogan">Virtual Money Adventure 🎮</p>
+          </div>
+        </div>
+
+        <ul class="nav__menu" id="nav-menu">
+          <li class="nav__item">
+            <a href="dashboard.html" class="nav__link">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="game.html" class="nav__link active">
+              <i class="fas fa-gamepad"></i>
+              <span>Money Game</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="real-money.html" class="nav__link">
+              <i class="fas fa-chart-line"></i>
+              <span>Real Money</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="transactions.html" class="nav__link">
+              <i class="fas fa-exchange-alt"></i>
+              <span>Transactions</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="goals.html" class="nav__link">
+              <i class="fas fa-bullseye"></i>
+              <span>Goals</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="badges.html" class="nav__link">
+              <i class="fas fa-trophy"></i>
+              <span>Badges</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav__actions">
+          <div class="virtual-currency">
+            <i class="fas fa-coins"></i>
+            <span id="virtual-balance">$5,000</span>
+          </div>
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main container">
+      <!-- Game Header -->
+      <section class="game-header">
+        <div class="player-stats">
+          <div class="stat-card interactive-hover">
+            <div class="stat-icon">💰</div>
+            <div class="stat-info">
+              <div class="stat-value" id="virtual-cash">$5,000</div>
+              <div class="stat-label">Virtual Cash</div>
+            </div>
+          </div>
+          <div class="stat-card interactive-hover">
+            <div class="stat-icon">📈</div>
+            <div class="stat-info">
+              <div class="stat-value" id="net-worth">$5,000</div>
+              <div class="stat-label">Net Worth</div>
+            </div>
+          </div>
+          <div class="stat-card interactive-hover">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-info">
+              <div class="stat-value" id="player-level">1</div>
+              <div class="stat-label">Level</div>
+            </div>
+          </div>
+          <div class="stat-card interactive-hover">
+            <div class="stat-icon">🔥</div>
+            <div class="stat-info">
+              <div class="stat-value" id="streak">0</div>
+              <div class="stat-label">Day Streak</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Daily Reward -->
+      <section class="daily-reward-section">
+        <div class="reward-card glass-effect interactive-hover">
+          <div class="reward-header">
+            <h3>🎁 Daily Reward Available!</h3>
+            <div class="streak-info">
+              <span
+                >Current Streak:
+                <strong id="current-streak-display">0 days</strong></span
+              >
+            </div>
+          </div>
+          <div class="reward-content">
+            <div class="reward-wheel" id="reward-wheel">
+              <div class="wheel-container">
+                <div class="wheel">
+                  <div class="wheel-section" data-value="100">100🪙</div>
+                  <div class="wheel-section" data-value="200">200🪙</div>
+                  <div class="wheel-section" data-value="500">500🪙</div>
+                  <div class="wheel-section" data-value="bonus">🎁 Bonus</div>
+                  <div class="wheel-section" data-value="50">50🪙</div>
+                  <div class="wheel-section" data-value="300">300🪙</div>
+                </div>
+                <div class="wheel-center">
+                  <button class="btn btn--primary btn-press" id="spin-wheel">
+                    <i class="fas fa-sync-alt"></i>
+                    SPIN!
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="reward-timer">
+              <i class="fas fa-clock"></i>
+              <span
+                >Next reward in:
+                <strong id="reward-timer">23:59:59</strong></span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Current Scenario -->
+      <section class="scenario-section">
+        <div class="scenario-card glass-effect" id="current-scenario">
+          <div class="scenario-header">
+            <h3>Welcome to Your Virtual Life! 🎮</h3>
+            <div class="scenario-difficulty">
+              <span class="difficulty-badge easy">Beginner</span>
+            </div>
+          </div>
+
+          <div class="scenario-content">
+            <div class="scenario-image">
+              <div class="scenario-emoji">🏠</div>
+            </div>
+            <div class="scenario-text">
+              <h4>Starting Your Adult Journey</h4>
+              <p>
+                You just turned 18 and received $5,000 as a graduation gift.
+                Time to make some life decisions! What's your first move?
+              </p>
+
+              <div class="scenario-stats">
+                <div class="stat">
+                  <span>Current Cash: <strong>$5,000</strong></span>
+                </div>
+                <div class="stat">
+                  <span>Monthly Income: <strong>$0</strong></span>
+                </div>
+                <div class="stat">
+                  <span>Financial Health: <strong>75%</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scenario-choices" id="scenario-choices">
+            <button
+              class="choice-btn interactive-hover btn-press"
+              data-value="education"
+            >
+              <div class="choice-icon">🎓</div>
+              <div class="choice-content">
+                <strong>Invest in Education</strong>
+                <span>Spend $3,000 on courses and certifications</span>
+              </div>
+              <div class="choice-amount negative">-$3,000</div>
+            </button>
+
+            <button
+              class="choice-btn interactive-hover btn-press"
+              data-value="business"
+            >
+              <div class="choice-icon">💼</div>
+              <div class="choice-content">
+                <strong>Start Small Business</strong>
+                <span>Use $2,000 to start a side hustle</span>
+              </div>
+              <div class="choice-amount negative">-$2,000</div>
+            </button>
+
+            <button
+              class="choice-btn interactive-hover btn-press"
+              data-value="party"
+            >
+              <div class="choice-icon">🎉</div>
+              <div class="choice-content">
+                <strong>Celebrate & Party</strong>
+                <span>Spend $500 on graduation celebration</span>
+              </div>
+              <div class="choice-amount negative">-$500</div>
+            </button>
+
+            <button
+              class="choice-btn interactive-hover btn-press"
+              data-value="save"
+            >
+              <div class="choice-icon">🏦</div>
+              <div class="choice-content">
+                <strong>Save Everything</strong>
+                <span>Keep all money in savings account</span>
+              </div>
+              <div class="choice-amount positive">$0</div>
+            </button>
+          </div>
+
+          <div class="scenario-prediction" id="scenario-prediction">
+            <div class="prediction-header">
+              <i class="fas fa-crystal-ball"></i>
+              <span>Money Crystal Ball 🔮</span>
+            </div>
+            <p id="prediction-text">
+              Make a choice to see how it affects your financial future!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Scenarios -->
+      <section class="quick-scenarios">
+        <div class="section-header">
+          <h3>Quick Scenarios ⚡</h3>
+          <span class="section-subtitle"
+            >Test your impulse control with these common spending
+            situations</span
+          >
+        </div>
+        <div class="scenario-grid">
+          <div
+            class="mini-scenario interactive-hover btn-press"
+            data-scenario="coffee"
+          >
+            <div class="mini-icon">☕</div>
+            <div class="mini-content">
+              <strong>Daily Coffee Run</strong>
+              <span class="negative">-$5</span>
+            </div>
+          </div>
+          <div
+            class="mini-scenario interactive-hover btn-press"
+            data-scenario="shopping"
+          >
+            <div class="mini-icon">🛍️</div>
+            <div class="mini-content">
+              <strong>Impulse Shopping</strong>
+              <span class="negative">-$85</span>
+            </div>
+          </div>
+          <div
+            class="mini-scenario interactive-hover btn-press"
+            data-scenario="food"
+          >
+            <div class="mini-icon">🍔</div>
+            <div class="mini-content">
+              <strong>Food Delivery</strong>
+              <span class="negative">-$25</span>
+            </div>
+          </div>
+          <div
+            class="mini-scenario interactive-hover btn-press"
+            data-scenario="streaming"
+          >
+            <div class="mini-icon">📺</div>
+            <div class="mini-content">
+              <strong>Streaming Subscriptions</strong>
+              <span class="negative">-$15</span>
+            </div>
+          </div>
+          <div
+            class="mini-scenario interactive-hover btn-press"
+            data-scenario="gaming"
+          >
+            <div class="mini-icon">🎮</div>
+            <div class="mini-content">
+              <strong>In-Game Purchase</strong>
+              <span class="negative">-$10</span>
+            </div>
+          </div>
+          <div
+            class="mini-scenario interactive-hover btn-press"
+            data-scenario="snacks"
+          >
+            <div class="mini-icon">🍫</div>
+            <div class="mini-content">
+              <strong>Snack Attack</strong>
+              <span class="negative">-$8</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Virtual Store -->
+      <section class="virtual-store-section">
+        <div class="section-header">
+          <h3>🛍️ Virtual Store</h3>
+          <span class="section-subtitle"
+            >Spend your virtual coins on cool items and boosts!</span
+          >
+        </div>
+        <div class="store-categories">
+          <button class="category-btn active btn-press" data-category="all">
+            All Items
+          </button>
+          <button class="category-btn btn-press" data-category="boosts">
+            🚀 Boosts
+          </button>
+          <button class="category-btn btn-press" data-category="cosmetics">
+            🎨 Cosmetics
+          </button>
+          <button class="category-btn btn-press" data-category="utilities">
+            🛠️ Utilities
+          </button>
+        </div>
+        <div class="store-grid" id="store-grid">
+          <div class="store-item interactive-hover" data-item="income_boost">
+            <div class="item-image">
+              <div class="item-emoji">📈</div>
+              <div class="item-price">500🪙</div>
+            </div>
+            <div class="item-content">
+              <h4>Income Boost</h4>
+              <p>+20% income from scenarios for 24 hours</p>
+              <div class="item-stats">
+                <span class="stat">Duration: 24h</span>
+                <span class="stat">Effect: +20% Income</span>
+              </div>
+            </div>
+            <button class="btn btn--primary btn--small btn-press buy-btn">
+              Buy Now
+            </button>
+          </div>
+
+          <div
+            class="store-item interactive-hover"
+            data-item="streak_protector"
+          >
+            <div class="item-image">
+              <div class="item-emoji">🛡️</div>
+              <div class="item-price">300🪙</div>
+            </div>
+            <div class="item-content">
+              <h4>Streak Protector</h4>
+              <p>Protect your daily streak for one miss</p>
+              <div class="item-stats">
+                <span class="stat">Uses: 1</span>
+                <span class="stat">Effect: Streak Save</span>
+              </div>
+            </div>
+            <button class="btn btn--primary btn--small btn-press buy-btn">
+              Buy Now
+            </button>
+          </div>
+
+          <div class="store-item interactive-hover" data-item="double_rewards">
+            <div class="item-image">
+              <div class="item-emoji">🎁</div>
+              <div class="item-price">750🪙</div>
+            </div>
+            <div class="item-content">
+              <h4>Double Rewards</h4>
+              <p>Double coins from next 5 scenarios</p>
+              <div class="item-stats">
+                <span class="stat">Uses: 5</span>
+                <span class="stat">Effect: 2x Rewards</span>
+              </div>
+            </div>
+            <button class="btn btn--primary btn--small btn-press buy-btn">
+              Buy Now
+            </button>
+          </div>
+
+          <div class="store-item interactive-hover" data-item="avatar_hat">
+            <div class="item-image">
+              <div class="item-emoji">🎩</div>
+              <div class="item-price">200🪙</div>
+            </div>
+            <div class="item-content">
+              <h4>Cool Hat</h4>
+              <p>Stylish hat for your avatar</p>
+              <div class="item-stats">
+                <span class="stat">Type: Cosmetic</span>
+                <span class="stat">Rarity: Common</span>
+              </div>
+            </div>
+            <button class="btn btn--primary btn--small btn-press buy-btn">
+              Buy Now
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Progress & Achievements -->
+      <section class="game-progress">
+        <div class="progress-grid">
+          <div class="progress-card interactive-hover">
+            <h4>Financial Health Score</h4>
+            <div class="score-circle">
+              <div class="circle-progress" data-value="75">
+                <span>75%</span>
+              </div>
+            </div>
+            <p>You're doing better than 60% of players!</p>
+            <div class="health-tips">
+              <div class="tip">
+                💡 Tip: Try to maintain above 70% for best results
+              </div>
+            </div>
+          </div>
+
+          <div class="progress-card interactive-hover">
+            <h4>Recent Achievements</h4>
+            <div class="achievements-list">
+              <div class="achievement-mini earned">
+                <div class="achievement-icon">💰</div>
+                <div class="achievement-info">
+                  <strong>First Save</strong>
+                  <span>Saved your first $100</span>
+                </div>
+                <div class="achievement-date">Today</div>
+              </div>
+              <div class="achievement-mini locked">
+                <div class="achievement-icon">🏠</div>
+                <div class="achievement-info">
+                  <strong>Home Owner</strong>
+                  <span>Save $50,000</span>
+                </div>
+                <div class="achievement-progress">15%</div>
+              </div>
+              <div class="achievement-mini locked">
+                <div class="achievement-icon">💼</div>
+                <div class="achievement-info">
+                  <strong>Business Mogul</strong>
+                  <span>Start 3 businesses</span>
+                </div>
+                <div class="achievement-progress">33%</div>
+              </div>
+            </div>
+            <a
+              href="badges.html"
+              class="btn btn--secondary btn--small btn-press"
+            >
+              View All Achievements
+            </a>
+          </div>
+
+          <div class="progress-card interactive-hover">
+            <h4>🎯 Current Goals</h4>
+            <div class="game-goals">
+              <div class="game-goal">
+                <div class="goal-info">
+                  <span class="goal-name">Reach Level 5</span>
+                  <span class="goal-progress">1/5</span>
+                </div>
+                <div class="progress-bar small">
+                  <div class="progress-fill" style="width: 20%"></div>
+                </div>
+              </div>
+              <div class="game-goal">
+                <div class="goal-info">
+                  <span class="goal-name">Complete 10 Scenarios</span>
+                  <span class="goal-progress">1/10</span>
+                </div>
+                <div class="progress-bar small">
+                  <div class="progress-fill" style="width: 10%"></div>
+                </div>
+              </div>
+              <div class="game-goal">
+                <div class="goal-info">
+                  <span class="goal-name">7-Day Streak</span>
+                  <span class="goal-progress">0/7</span>
+                </div>
+                <div class="progress-bar small">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+            <a
+              href="goals.html"
+              class="btn btn--secondary btn--small btn-press"
+            >
+              Set More Goals
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scenario Categories -->
+      <section class="scenario-categories">
+        <div class="section-header">
+          <h3>🌍 Life Scenarios</h3>
+          <span class="section-subtitle"
+            >Explore different areas of financial decision-making</span
+          >
+        </div>
+        <div class="categories-grid">
+          <div class="category-card interactive-hover" data-category="career">
+            <div class="category-icon">💼</div>
+            <div class="category-content">
+              <h4>Career & Income</h4>
+              <p>Job choices, salary negotiations, side hustles</p>
+              <div class="category-stats">
+                <span class="stat">5 scenarios</span>
+                <span class="stat completion">0% complete</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="category-card interactive-hover"
+            data-category="relationships"
+          >
+            <div class="category-icon">💑</div>
+            <div class="category-content">
+              <h4>Relationships</h4>
+              <p>Dating, friendships, family finances</p>
+              <div class="category-stats">
+                <span class="stat">8 scenarios</span>
+                <span class="stat completion">0% complete</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="category-card interactive-hover"
+            data-category="lifestyle"
+          >
+            <div class="category-icon">🏠</div>
+            <div class="category-content">
+              <h4>Lifestyle</h4>
+              <p>Housing, transportation, daily choices</p>
+              <div class="category-stats">
+                <span class="stat">12 scenarios</span>
+                <span class="stat completion">0% complete</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="category-card interactive-hover"
+            data-category="emergencies"
+          >
+            <div class="category-icon">🚨</div>
+            <div class="category-content">
+              <h4>Emergency Situations</h4>
+              <p>Unexpected expenses and crises</p>
+              <div class="category-stats">
+                <span class="stat">6 scenarios</span>
+                <span class="stat completion">0% complete</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Friends & Leaderboard -->
+      <section class="social-section">
+        <div class="social-grid">
+          <div class="social-card interactive-hover">
+            <div class="social-header">
+              <h4>👥 Friends Activity</h4>
+              <button class="btn btn--secondary btn--small btn-press">
+                Add Friends
+              </button>
+            </div>
+            <div class="friends-list">
+              <div class="friend-activity">
+                <div class="friend-avatar">😎</div>
+                <div class="activity-info">
+                  <strong>Alex</strong> completed "Career Crossroads"
+                  <span class="activity-time">2 hours ago</span>
+                </div>
+                <div class="activity-reward">+150🪙</div>
+              </div>
+              <div class="friend-activity">
+                <div class="friend-avatar">🤓</div>
+                <div class="activity-info">
+                  <strong>Sam</strong> reached Level 3
+                  <span class="activity-time">5 hours ago</span>
+                </div>
+                <div class="activity-reward">Level Up! 🎉</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-card interactive-hover">
+            <div class="social-header">
+              <h4>🏆 Leaderboard</h4>
+              <span class="period">This Week</span>
+            </div>
+            <div class="leaderboard">
+              <div class="leaderboard-item you">
+                <div class="rank">#7</div>
+                <div class="player-avatar">😊</div>
+                <div class="player-info">
+                  <strong>You</strong>
+                  <span>Level 1 • $5,000</span>
+                </div>
+                <div class="player-score">1,200 pts</div>
+              </div>
+              <div class="leaderboard-item">
+                <div class="rank">#1</div>
+                <div class="player-avatar">🐐</div>
+                <div class="player-info">
+                  <strong>MoneyMaster</strong>
+                  <span>Level 15 • $125,000</span>
+                </div>
+                <div class="player-score">8,450 pts</div>
+              </div>
+              <div class="leaderboard-item">
+                <div class="rank">#2</div>
+                <div class="player-avatar">💎</div>
+                <div class="player-info">
+                  <strong>SavingsQueen</strong>
+                  <span>Level 12 • $98,000</span>
+                </div>
+                <div class="player-score">7,890 pts</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating Action Button -->
+    <button
+      class="fab pulse-notification"
+      id="quick-scenario-fab"
+      title="New Scenario"
+    >
+      <i class="fas fa-dice"></i>
+    </button>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__section">
+            <div class="footer__logo">
+              <i class="fas fa-piggy-bank"></i>
+              <h3>SaveSmart</h3>
+            </div>
+            <p>Learning financial skills through fun, interactive scenarios.</p>
+          </div>
+          <div class="footer__section">
+            <h4>Game Features</h4>
+            <ul>
+              <li><a href="#">500+ Scenarios</a></li>
+              <li><a href="#">Virtual Store</a></li>
+              <li><a href="#">Daily Rewards</a></li>
+              <li><a href="#">Achievements</a></li>
+            </ul>
+          </div>
+          <div class="footer__section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>
+            &copy; 2024 SaveSmart. Virtual money only - educational purposes.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Purchase Confirmation Modal -->
+    <div class="modal" id="purchase-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3>Confirm Purchase</h3>
+          <button class="modal__close" id="purchase-modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <div class="purchase-details">
+            <div class="item-preview">
+              <div class="item-emoji" id="purchase-emoji">📈</div>
+              <div class="item-info">
+                <h4 id="purchase-item-name">Income Boost</h4>
+                <p id="purchase-item-desc">
+                  +20% income from scenarios for 24 hours
+                </p>
+              </div>
+            </div>
+            <div class="purchase-price">
+              <span>Price: </span>
+              <strong id="purchase-price">500🪙</strong>
+            </div>
+            <div class="balance-check">
+              <span>Your Balance: </span>
+              <strong id="purchase-balance">1,000🪙</strong>
+            </div>
+          </div>
+          <div class="purchase-actions">
+            <button class="btn btn--primary btn-press" id="confirm-purchase">
+              <i class="fas fa-shopping-cart"></i>
+              Confirm Purchase
+            </button>
+            <button class="btn btn--secondary btn-press" id="cancel-purchase">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scenario Result Modal -->
+    <div class="modal" id="scenario-result-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3>Scenario Complete! 🎉</h3>
+          <button class="modal__close" id="result-modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <div class="result-content">
+            <div class="result-emoji" id="result-emoji">💡</div>
+            <div class="result-text">
+              <h4 id="result-title">Great Choice!</h4>
+              <p id="result-message">
+                You made a smart financial decision that will pay off in the
+                long run.
+              </p>
+            </div>
+          </div>
+          <div class="result-stats">
+            <div class="stat-change">
+              <span>Cash Change:</span>
+              <strong id="cash-change" class="positive">+$0</strong>
+            </div>
+            <div class="stat-change">
+              <span>Financial Health:</span>
+              <strong id="health-change" class="positive">+5%</strong>
+            </div>
+            <div class="stat-change">
+              <span>Reward:</span>
+              <strong id="reward-amount" class="positive">+100🪙</strong>
+            </div>
+          </div>
+          <div class="result-actions">
+            <button class="btn btn--primary btn-press" id="next-scenario">
+              <i class="fas fa-arrow-right"></i>
+              Next Scenario
+            </button>
+            <button class="btn btn--secondary btn-press" id="share-result">
+              <i class="fas fa-share"></i>
+              Share
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wheel Result Modal -->
+    <div class="modal" id="wheel-result-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3>Daily Reward! 🎁</h3>
+          <button class="modal__close" id="wheel-modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal__body">
+          <div class="wheel-result-content">
+            <div class="result-prize">
+              <div class="prize-emoji" id="prize-emoji">🪙</div>
+              <div class="prize-amount" id="prize-amount">100 Coins</div>
+            </div>
+            <div class="result-message">
+              <p id="wheel-message">Congratulations! You won 100 coins.</p>
+            </div>
+            <div class="streak-update">
+              <span
+                >Current Streak: <strong id="new-streak">1 day</strong></span
+              >
+            </div>
+          </div>
+          <button class="btn btn--primary btn--full btn-press" id="claim-prize">
+            <i class="fas fa-gift"></i>
+            Claim Prize
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Celebration Container -->
+    <div id="celebration-container"></div>
+
+    <script src="js/app.js"></script>
+    <script src="js/confetti.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>
