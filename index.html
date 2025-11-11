@@ -1,490 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SaveSmart - Gamified Money Management</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav container">
-        <div class="nav__logo">
-          <i class="fas fa-piggy-bank"></i>
-          <div>
-            <h1>SaveSmart</h1>
-            <p class="slogan">Level Up Your Financial Game 💰</p>
-          </div>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to SaveSmart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="auth-body">
 
-        <ul class="nav__menu" id="nav-menu">
-          <li class="nav__item">
-            <a href="dashboard.html" class="nav__link">
-              <i class="fas fa-home"></i>
-              <span>Dashboard</span>
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="game.html" class="nav__link">
-              <i class="fas fa-gamepad"></i>
-              <span>Money Game</span>
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="real-money.html" class="nav__link">
-              <i class="fas fa-chart-line"></i>
-              <span>Real Money</span>
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="goals.html" class="nav__link">
-              <i class="fas fa-bullseye"></i>
-              <span>Goals</span>
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="badges.html" class="nav__link">
-              <i class="fas fa-trophy"></i>
-              <span>Badges</span>
-            </a>
-          </li>
-        </ul>
-
-        <div class="nav__actions">
-          <button class="btn btn--primary" id="quick-start-btn">
-            <i class="fas fa-rocket"></i>
-            Quick Start
-          </button>
-          <button class="theme-toggle" id="theme-toggle" title="Toggle dark/light mode">
-            <i class="fas fa-moon"></i>
-          </button>
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="fas fa-bars"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main class="main container">
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="hero__content">
-          <h1 class="hero__title">
-            Master Your Money,<br />Level Up Your Life 🚀
-          </h1>
-          <p class="hero__description">
-            SaveSmart turns boring budgeting into an epic adventure! Make smart
-            financial choices, face real-world scenarios, and build wealth while
-            having fun. No real money required!
-          </p>
-          <div class="hero__actions">
-            <a href="game.html" class="btn btn--primary btn--large">
-              <i class="fas fa-play"></i>
-              Start Playing
-            </a>
-            <a href="real-money.html" class="btn btn--secondary btn--large">
-              <i class="fas fa-chart-line"></i>
-              Track Real Money
-            </a>
-          </div>
-          <div class="hero__stats">
-            <div class="stat">
-              <span class="stat__number">50K+</span>
-              <span class="stat__label">Players Leveling Up</span>
-            </div>
-            <div class="stat">
-              <span class="stat__number">$2.1M+</span>
-              <span class="stat__label">Virtual Wealth Created</span>
-            </div>
-            <div class="stat">
-              <span class="stat__number">94%</span>
-              <span class="stat__label">Better Money Habits</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero__visual">
-          <div class="game-preview">
-            <div class="phone-mockup">
-              <div class="phone-screen">
-                <div class="game-scene">
-                  <div class="character">😎</div>
-                  <div class="money-stack">💰💰💰</div>
-                  <div class="scenario-card-mini">
-                    <h4>New Phone Drop!</h4>
-                    <p>Latest smartphone just released. Buy it now?</p>
-                    <div class="choices">
-                      <button class="choice-btn-mini">YOLO! 💸</button>
-                      <button class="choice-btn-mini">Nah, I'm good ✋</button>
-                    </div>
-                  </div>
+    <div class="auth-container" id="auth-container">
+        <!-- Sign Up Form -->
+        <div class="form-container sign-up-container">
+            <form id="signup-form">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-              </div>
-            </div>
-          </div>
+                <span>or use your email for registration</span>
+                <input type="text" id="signup-name" placeholder="Name" required />
+                <input type="email" id="signup-email" placeholder="Email" required />
+                <input type="password" id="signup-password" placeholder="Password" required />
+                <button type="submit">Sign Up</button>
+            </form>
         </div>
-      </section>
 
-      <!-- Features Section -->
-      <section class="features" id="features">
-        <h2 class="section__title">Why SaveSmart is Lit 🔥</h2>
-        <div class="features__grid">
-          <div class="feature__card interactive-hover">
-            <div class="feature__icon">
-              <i class="fas fa-gamepad"></i>
-            </div>
-            <h3>Epic Money Game</h3>
-            <p>
-              Face 500+ real-life spending scenarios. From impulse buys to
-              investment opportunities - make choices and see the consequences!
-            </p>
-          </div>
-          <div class="feature__card interactive-hover">
-            <div class="feature__icon">
-              <i class="fas fa-brain"></i>
-            </div>
-            <h3>Smart Predictions</h3>
-            <p>
-              "At this rate, you'll be broke by Friday 😭" - Get real talk about
-              your spending habits with our savage but accurate predictor.
-            </p>
-          </div>
-          <div class="feature__card interactive-hover">
-            <div class="feature__icon">
-              <i class="fas fa-trophy"></i>
-            </div>
-            <h3>Level Up & Earn Badges</h3>
-            <p>
-              Unlock achievements, build streaks, and flex your financial
-              skills. Who said money can't buy happiness? It buys badges! 🏆
-            </p>
-          </div>
-          <div class="feature__card interactive-hover">
-            <div class="feature__icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <h3>Real Money Tracking</h3>
-            <p>
-              Optional real money mode for when you're ready to apply your
-              skills to actual finances. Bank-level security, zero stress.
-            </p>
-          </div>
+        <!-- Sign In Form -->
+        <div class="form-container sign-in-container">
+            <form id="login-form">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" id="login-email" placeholder="Email" required />
+                <input type="password" id="login-password" placeholder="Password" required />
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
         </div>
-      </section>
 
-      <!-- How It Works -->
-      <section class="how-it-works">
-        <h2 class="section__title">How It Works 🎮</h2>
-        <div class="steps">
-          <div class="step interactive-hover">
-            <div class="step__number">1</div>
-            <div class="step__content">
-              <h3>Start Virtual Life</h3>
-              <p>
-                Get virtual money and begin your financial journey. No risk, all
-                fun!
-              </p>
+        <!-- Overlay for switching between forms -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start your journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
             </div>
-          </div>
-          <div class="step interactive-hover">
-            <div class="step__number">2</div>
-            <div class="step__content">
-              <h3>Face Scenarios</h3>
-              <p>
-                Make spending decisions in realistic situations. Your choices
-                shape your virtual wealth.
-              </p>
-            </div>
-          </div>
-          <div class="step interactive-hover">
-            <div class="step__number">3</div>
-            <div class="step__content">
-              <h3>Learn & Improve</h3>
-              <p>
-                Get instant feedback, predictions, and tips. Build money skills
-                that last.
-              </p>
-            </div>
-          </div>
-          <div class="step interactive-hover">
-            <div class="step__number">4</div>
-            <div class="step__content">
-              <h3>Level Up IRL</h3>
-              <p>Apply your new skills to real finances when you're ready.</p>
-            </div>
-          </div>
         </div>
-      </section>
-
-      <!-- Testimonials -->
-      <section class="testimonials">
-        <h2 class="section__title">What Players Say 💬</h2>
-        <div class="testimonials__grid">
-          <div class="testimonial__card interactive-hover">
-            <div class="testimonial__content">
-              "This app called me out for my Starbucks addiction 😂 But fr, I
-              saved $200 this month!"
-            </div>
-            <div class="testimonial__author">
-              <strong>Chloe, 23</strong>
-              <span>Saved for her first vacation 🏖️</span>
-            </div>
-          </div>
-          <div class="testimonial__card interactive-hover">
-            <div class="testimonial__content">
-              "The 'spending money on women eii' scenario had me crying! Too
-              real bro 💀"
-            </div>
-            <div class="testimonial__author">
-              <strong>Mike, 25</strong>
-              <span>Building emergency fund 🛡️</span>
-            </div>
-          </div>
-          <div class="testimonial__card interactive-hover">
-            <div class="testimonial__content">
-              "Never thought budgeting could be fun. The badges got me hooked!"
-            </div>
-            <div class="testimonial__author">
-              <strong>Sarah, 19</strong>
-              <span>College student 🎓</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Daily Reward Teaser -->
-      <section class="daily-reward-teaser">
-        <div class="teaser-card glass-effect">
-          <div class="teaser-content">
-            <h3>🎁 Daily Rewards Await!</h3>
-            <p>
-              Come back every day to spin the wheel and earn bonus coins,
-              exclusive items, and special boosts!
-            </p>
-            <div class="teaser-features">
-              <div class="teaser-feature">
-                <i class="fas fa-coins"></i>
-                <span>Daily Coin Bonuses</span>
-              </div>
-              <div class="teaser-feature">
-                <i class="fas fa-gift"></i>
-                <span>Exclusive Items</span>
-              </div>
-              <div class="teaser-feature">
-                <i class="fas fa-bolt"></i>
-                <span>Special Boosts</span>
-              </div>
-            </div>
-            <a href="game.html" class="btn btn--primary">
-              <i class="fas fa-calendar-day"></i>
-              Check Daily Rewards
-            </a>
-          </div>
-          <div class="teaser-visual">
-            <div class="reward-wheel-preview">
-              <div class="wheel">
-                <div class="wheel-section">100🪙</div>
-                <div class="wheel-section">200🪙</div>
-                <div class="wheel-section">🎁</div>
-                <div class="wheel-section">500🪙</div>
-                <div class="wheel-section">💎</div>
-                <div class="wheel-section">100🪙</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Floating Action Button -->
-    <button class="fab" id="quick-action-fab" title="Quick Actions">
-      <i class="fas fa-bolt"></i>
-    </button>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__content">
-          <div class="footer__section">
-            <div class="footer__logo">
-              <i class="fas fa-piggy-bank"></i>
-              <h3>SaveSmart</h3>
-            </div>
-            <p>
-              Turning financial literacy into an epic game. Learn, play, and
-              level up your money skills! 🚀
-            </p>
-            <div class="footer__social">
-              <a href="#" data-tooltip="Follow us on TikTok"
-                ><i class="fab fa-tiktok"></i
-              ></a>
-              <a href="#" data-tooltip="Follow us on Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" data-tooltip="Follow us on Twitter"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="#" data-tooltip="Join our Discord"
-                ><i class="fab fa-discord"></i
-              ></a>
-            </div>
-          </div>
-          <div class="footer__section">
-            <h4>Game Modes</h4>
-            <ul>
-              <li><a href="game.html">Virtual Money Game</a></li>
-              <li><a href="real-money.html">Real Money Tracker</a></li>
-              <li><a href="dashboard.html">Dashboard</a></li>
-              <li><a href="goals.html">Savings Goals</a></li>
-            </ul>
-          </div>
-          <div class="footer__section">
-            <h4>Features</h4>
-            <ul>
-              <li><a href="#">500+ Scenarios</a></li>
-              <li><a href="#">Spending Predictor</a></li>
-              <li><a href="badges.html">Achievement Badges</a></li>
-              <li><a href="#">Financial Education</a></li>
-            </ul>
-          </div>
-          <div class="footer__section">
-            <h4>Support</h4>
-            <ul>
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Community</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <p>
-            &copy; 2024 SaveSmart. Made with ❤️ for the youth. No financial
-            advice, just good vibes and better habits.
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Quick Start Modal -->
-    <div class="modal" id="quick-start-modal">
-      <div class="modal__content">
-        <div class="modal__header">
-          <h3>Choose Your Adventure 🎮</h3>
-          <button class="modal__close" id="modal-close">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal__body">
-          <div class="mode-selection">
-            <div class="mode-card interactive-hover" data-mode="game">
-              <div class="mode-icon">
-                <i class="fas fa-gamepad"></i>
-              </div>
-              <h4>Virtual Money Game</h4>
-              <p>
-                Start with virtual currency and learn through fun scenarios.
-                Zero risk, maximum fun!
-              </p>
-              <ul>
-                <li>🎯 500+ Real-life scenarios</li>
-                <li>💰 Virtual money only</li>
-                <li>🏆 Earn badges & level up</li>
-                <li>😂 Fun, relatable content</li>
-              </ul>
-              <button
-                class="btn btn--primary btn--full btn-press"
-                data-loading="true"
-              >
-                <i class="fas fa-play"></i>
-                Start Playing
-              </button>
-            </div>
-            <div class="mode-card interactive-hover" data-mode="real">
-              <div class="mode-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <h4>Real Money Tracker</h4>
-              <p>Track your actual finances with our secure platform.</p>
-              <ul>
-                <li>🔒 Bank-level security</li>
-                <li>📊 Real financial tracking</li>
-                <li>🎮 Game elements included</li>
-                <li>💡 Personalized insights</li>
-              </ul>
-              <button
-                class="btn btn--secondary btn--full btn-press"
-                data-loading="true"
-              >
-                <i class="fas fa-chart-line"></i>
-                Track Real Money
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!-- Quick Actions Menu -->
-    <div class="modal" id="quick-actions-modal">
-      <div class="modal__content">
-        <div class="modal__header">
-          <h3>Quick Actions ⚡</h3>
-          <button class="modal__close" id="quick-actions-close">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal__body">
-          <div class="quick-actions-grid">
-            <a href="game.html" class="quick-action interactive-hover">
-              <div class="action-icon">
-                <i class="fas fa-play"></i>
-              </div>
-              <div class="action-content">
-                <h4>Continue Game</h4>
-                <p>Jump back into your virtual life</p>
-              </div>
-            </a>
-            <a href="dashboard.html" class="quick-action interactive-hover">
-              <div class="action-icon">
-                <i class="fas fa-tachometer-alt"></i>
-              </div>
-              <div class="action-content">
-                <h4>Dashboard</h4>
-                <p>View your financial overview</p>
-              </div>
-            </a>
-            <a href="badges.html" class="quick-action interactive-hover">
-              <div class="action-icon">
-                <i class="fas fa-trophy"></i>
-              </div>
-              <div class="action-content">
-                <h4>Achievements</h4>
-                <p>Check your progress & badges</p>
-              </div>
-            </a>
-            <a href="goals.html" class="quick-action interactive-hover">
-              <div class="action-icon">
-                <i class="fas fa-bullseye"></i>
-              </div>
-              <div class="action-content">
-                <h4>Goals</h4>
-                <p>Manage your savings targets</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Celebration Container (for confetti and achievements) -->
-    <div id="celebration-container"></div>
-
-    <script src="js/app.js"></script>
-    <script src="js/confetti.js"></script>
-    <script src="animations.js"></script>
-  </body>
+    <script src="auth.js"></script>
+</body>
 </html>

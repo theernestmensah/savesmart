@@ -59,6 +59,15 @@ class SaveSmartApp {
                 this.toggleTheme();
             });
         }
+
+        // Logout button
+        const logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem('loggedInUser');
+                window.location.href = 'index.html';
+            });
+        }
     }
 
     loadUserData() {
