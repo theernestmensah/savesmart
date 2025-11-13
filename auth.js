@@ -47,8 +47,8 @@ signInForm.addEventListener('submit', (e) => {
     if (user) {
         // Simulate a session by storing the logged-in user's email
         localStorage.setItem('loggedInUser', user.email);
-        // Redirect to the landing page after successful login
-        window.location.href = 'landing.html';
+        // Redirect to the dashboard page after successful login
+        window.location.href = 'dashboard.html';
     } else {
         alert('Invalid email or password.');
     }

@@ -79,7 +79,7 @@
 }
 
 /* Dark Theme Variables */
-body[data-theme="dark"] {
+.dark-mode {
     --primary-50: #1a2a38;
     --primary-100: #2c4a63;
     --primary-500: #66b2ff;
@@ -113,6 +113,110 @@ body[data-theme="dark"] {
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.26);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.24);
+}
+
+.dark-mode body {
+    background-color: var(--gray-50);
+    color: var(--gray-800);
+}
+
+.dark-mode .header,
+.dark-mode .modal__content,
+.dark-mode .card,
+.dark-mode .feature__card,
+.dark-mode .testimonial__card,
+.dark-mode .scenario-card,
+.dark-mode .stat-card,
+.dark-mode .progress-card,
+.dark-mode .overview-card,
+.dark-mode .summary-card,
+.dark-mode .analytics-card,
+.dark-mode .recent-card,
+.dark-mode .setup-card,
+.dark-mode .setup-option,
+.dark-mode .predictor-card,
+.dark-mode .mode-card,
+.dark-mode .goal-card,
+.dark-mode .badge-card,
+.dark-mode .phone-screen,
+.dark-mode .mini-scenario,
+.dark-mode .filters-section,
+.dark-mode .transactions-section,
+.dark-mode .category-tab {
+    background-color: var(--gray-100);
+    color: var(--gray-800);
+    border-color: var(--gray-300);
+}
+
+.dark-mode .nav__link {
+    color: var(--gray-600);
+}
+
+.dark-mode .nav__link:hover,
+.dark-mode .nav__link.active {
+    background-color: var(--primary-50);
+    color: var(--primary-600);
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode .section__title,
+.dark-mode .hero__title,
+.dark-mode .nav__logo h1 {
+    color: var(--gray-900);
+}
+
+.dark-mode .btn--secondary {
+    color: var(--primary-600);
+    border-color: var(--primary-600);
+}
+
+.dark-mode .btn--secondary:hover {
+    background-color: var(--primary-50);
+}
+
+.dark-mode .form__group input,
+.dark-mode .form__group select,
+.dark-mode .form__group textarea {
+    background-color: var(--gray-200);
+    border-color: var(--gray-400);
+    color: var(--gray-800);
+}
+
+.dark-mode .theme-toggle:hover {
+    background-color: var(--gray-200);
+}
+
+.dark-mode .glass-effect {
+    background: rgba(42, 42, 42, 0.5); /* Darker glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .auth-body {
+    background: var(--gray-50);
+}
+
+.dark-mode .auth-container {
+    background-color: var(--gray-100);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.5),
+                0 10px 10px rgba(0,0,0,0.4);
+}
+
+.dark-mode .form-container form {
+    background-color: var(--gray-100);
+}
+
+.dark-mode .form-container input {
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+}
+
+.dark-mode .social-container a {
+    border-color: var(--gray-300);
 }
 
 body {
