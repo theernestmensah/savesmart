@@ -8,13 +8,14 @@ class SaveSmartApp {
         this.setupEventListeners();
         this.loadUserData();
         this.updateCurrentDate();
+        this.applyTheme();
     }
 
     setupEventListeners() {
         // Mobile navigation toggle
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
-        
+
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('show');
@@ -50,6 +51,23 @@ class SaveSmartApp {
                 this.handleQuickAddTransaction();
             });
         }
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                this.toggleTheme();
+            });
+        }
+
+        // Logout button
+        const logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem('loggedInUser');
+                window.location.href = 'index.html';
+            });
+        }
     }
 
     loadUserData() {
@@ -73,11 +91,11 @@ class SaveSmartApp {
         const dateElement = document.getElementById('current-date');
         if (dateElement) {
             const now = new Date();
-            const options = { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
             };
             dateElement.textContent = now.toLocaleDateString('en-US', options);
         }
@@ -106,7 +124,7 @@ class SaveSmartApp {
 
         this.saveTransaction(transaction);
         this.showNotification('Transaction added successfully!', 'success');
-        
+
         // Close modal and reset form
         document.getElementById('quick-add-modal').classList.remove('active');
         document.getElementById('quick-add-form').reset();
@@ -240,6 +258,25 @@ class SaveSmartApp {
             month: 'short',
             day: 'numeric'
         });
+    }
+
+    applyTheme() {
+        const userData = JSON.parse(localStorage.getItem('savesmart-user'));
+        const theme = userData?.preferences?.theme || 'light';
+        document.body.setAttribute('data-theme', theme);
+
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        }
+    }
+
+    toggleTheme() {
+        const userData = JSON.parse(localStorage.getItem('savesmart-user'));
+        const newTheme = (userData.preferences.theme === 'light') ? 'dark' : 'light';
+        userData.preferences.theme = newTheme;
+        localStorage.setItem('savesmart-user', JSON.stringify(userData));
+        this.applyTheme();
     }
 }
 

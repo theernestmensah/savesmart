@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Real Money Tracker - SaveSmart</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
@@ -70,6 +70,10 @@
               <option value="ZAR">R ZAR</option>
             </select>
           </div>
+          <button class="theme-toggle" id="theme-toggle" title="Toggle dark/light mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="btn btn--secondary" id="logout-btn">Logout</button>
           <div class="nav__toggle" id="nav-toggle">
             <i class="fas fa-bars"></i>
           </div>
@@ -723,8 +727,11 @@
     <!-- Celebration Container -->
     <div id="celebration-container"></div>
 
-    <script src="js/app.js"></script>
-    <script src="js/confetti.js"></script>
-    <script src="js/real-money.js"></script>
+    <script src="protect.js"></script>
+    <script src="app.js"></script>
+    <script src="confetti.js"></script>
+    <script src="real-money.js"></script>
+    <script src="animations.js"></script>
+    <script src="theme.js"></script>
   </body>
 </html>
